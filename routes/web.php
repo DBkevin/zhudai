@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::resource('categories', 'CategoryController');
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
