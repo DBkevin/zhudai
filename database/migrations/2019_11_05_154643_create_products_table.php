@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->boolean('type')->comment('商品新旧类型');
             $table->boolean('on_sale')->default(true)->comment("是否上架，默认上架");
             $table->string('images')->comment('商品图片路径');
-            $table->string("optinons")->nullable()->comment('增值服务');
+            $table->string("options")->nullable()->comment('增值服务');
             $table->decimal('price',10,2)->default(0)->comment('商品价格');
             $table->timestamps();
         });

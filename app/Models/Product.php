@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //允许写入字段
-    protected $fillbale=['title','description','attrbutes','brand','type','on_sale','images','price','opotions'];
+    protected $fillbale=['title','description','attrbutes','brand','type','on_sale','images','price','options'];
     protected $casts=[
         'type'=>'boolean',
         'on_sale'=>'boolean',

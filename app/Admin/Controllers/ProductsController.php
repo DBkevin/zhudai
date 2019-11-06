@@ -32,7 +32,7 @@ class ProductsController extends  AdminController
         $grid->on_sale('已上架')->display(function ($value) {
             return $value ? '是' : '否';
         });
-        $grid->options('增值服务');
+         $grid->optinons('增值服务');
         $grid->actions(function ($actions) {
             $actions->disableView();
             $actions->disableDelete();
@@ -55,7 +55,7 @@ class ProductsController extends  AdminController
     protected function detail($id)
     {
         $show = new Show(Product::findOrFail($id));
-        $show->string('title');
+        
         $show->field('id', __('Id'));
         $show->field('category_id', __('Category id'));
         $show->field('title', __('Title'));
@@ -65,7 +65,7 @@ class ProductsController extends  AdminController
         $show->field('type', __('Type'));
         $show->field('on_sale', __('On sale'));
         $show->field('images', __('Images'));
-        $show->field('optinons', __('Optinons'));
+        $show->field('options', __('Optinons'));
         $show->field('price', __('Price'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -81,8 +81,27 @@ class ProductsController extends  AdminController
     protected function form()
     {
         $form = new Form(new Product);
-
-        $form->number('category_id', __('Category id'));
+        $form->text('title','商品名称')->rules('required');
+        $form->image('images','商品图片')->rules('required|image');
+        $form->UEditor('description','商品详情')->rules('required');
+        $form->text('options','增值服务')->default(null);
+        $form->UEditor('attrbutes','商品参数')->rules('required');
+        $form->text('brand','品牌');
+        $states=[
+            'on'=>['value'=>1,'text'=>'全新','color'=>'success'],
+            'off'=>['value'=>0,'text'=>'二手','color'=>'danger'],
+        ];
+        $form->switch('type','是否全新')->states($states)->default('1');
+         // 创建一组单选框
+        $form->radio('on_sale', '上架')->options(['1' => '是', '0'=> '否'])->default('0');
+         // 直接添加一对多的关联模型
+        $form->hasMany('skus', 'SKU 列表', function (Form\NestedForm $form) {
+            $form->text('title', 'SKU 名称')->rules('required');
+            $form->text('price', '单价')->rules('required|numeric|min:0.01');
+            $form->text('stock', '剩余库存')->rules('required|integer|min:0');
+            $form->number('num','分期期数')->rules('required|integer|min:12');
+        });
+        /*$form->number('category_id', __('Category id'));
         $form->text('title', __('Title'));
         $form->textarea('description', __('Description'));
         $form->textarea('attrbutes', __('Attrbutes'));
@@ -92,6 +111,11 @@ class ProductsController extends  AdminController
         $form->text('images', __('Images'));
         $form->text('optinons', __('Optinons'));
         $form->decimal('price', __('Price'))->default(0.00);
+        */
+        //定义回调事件
+        $form->saving(function(Form $form){
+            $form->model()->price=collect($form->input('skus'))->where(Form::REMOVE_FLAG_NAME,0)->min('price')?:0;
+        });
 
         return $form;
     }

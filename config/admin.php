@@ -153,7 +153,7 @@ return [
     'upload' => [
 
         // Disk in `config/filesystem.php`.
-        'disk' => 'admin',
+        'disk' => 'public',
 
         // Image and file upload path under the disk above.
         'directory' => [
@@ -396,7 +396,18 @@ return [
     |
     */
     'extensions' => [
-
+        // 新增编辑器配置开始
+        'ueditor' => [
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+            // 编辑器的前端配置 参考：http://fex.baidu.com/ueditor/#start-config
+            'config' => [
+                'initialFrameHeight' => 200, // 例如初始化高度
+            ],
+            // 'field_type' => '自定义名字'
+        ]
+        //新增编辑器结束
+        
     ],
     
 ];
