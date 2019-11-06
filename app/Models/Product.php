@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    
+    //允许写入字段
+    protected $fillbale=['title','description','attrbutes','brand','type','on_sale','images','price','opotions'];
+    protected $casts=[
+        'type'=>'boolean',
+        'on_sale'=>'boolean',
+    ];
     /**
      * 一对一关联category表
      *
