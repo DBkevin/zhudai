@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->string('title')->comment('商品标题');
             $table->text('description')->comment('商品详情');
-            $table->text('attrbutes')->comment('商品参数');
+            $table->text('attrbuite')->comment("商品参数描述");
             $table->string('brand')->comment('商品品牌');
             $table->boolean('type')->comment('商品新旧类型');
             $table->boolean('on_sale')->default(true)->comment("是否上架，默认上架");

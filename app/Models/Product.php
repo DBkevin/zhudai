@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //允许写入字段
-    protected $fillbale=['title','description','attrbutes','brand','type','on_sale','images','price','options'];
+    protected $fillbale=['title','description','attrbuite','brand','type','on_sale','images','price','options'];
     protected $casts=[
         'type'=>'boolean',
         'on_sale'=>'boolean',
@@ -27,5 +27,14 @@ class Product extends Model
      */
     public function skus(){
         return $this->hasMany(ProductSku::class);
+    }
+
+    public function setImagesAttribute($images){
+        if(is_array($images)){
+            $this->attributes['images']=json_encode($images);
+        }
+    }
+    public function getImagesAttribute($images){
+        return json_decode($images,true);
     }
 }
