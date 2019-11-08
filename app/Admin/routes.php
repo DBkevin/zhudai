@@ -19,4 +19,6 @@ Route::group([
     $router->delete('categories/{id}', 'CategoriesController@destroy');
     $router->get('api/categories', 'CategoriesController@apiIndex');
     $router->resource('products', ProductsController::class);
+    $router->resource('msgs', MsgController::class);
+
 });

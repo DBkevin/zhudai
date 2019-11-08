@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class Product extends Model
 {
     //允许写入字段
@@ -36,5 +36,8 @@ class Product extends Model
     }
     public function getImagesAttribute($images){
         return json_decode($images,true);
+    }
+    public function getPriceNumAttribute($price){
+        return intval($this->price /12 );
     }
 }

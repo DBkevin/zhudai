@@ -35311,7 +35311,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
     ready: function ready(e) {
       var t = "layer",
           i = "",
-          n = (a ? "modules/layer/" : "/") + "layer.css?v=" + r.v + i;
+          n = (a ? "modules/layer/" : "theme/") + "default/layer.css?v=" + r.v + i;
       return a ? layui.addcss(n, e, t) : o.link(n, e, t), this;
     },
     alert: function alert(e, t, n) {

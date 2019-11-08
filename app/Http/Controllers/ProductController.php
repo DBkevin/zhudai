@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use App\Models\Category;
 class ProductController extends Controller
 {
     /**
@@ -12,11 +12,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $products = Product::query()->where('on_sale', true)->paginate();
-        return view('products.index',['products'=>$products]);
+        $categories=Category::query()->where('is_directory',false)->get();
+        $products = Product::query()->where('on_sale', true)->paginate(12);
+        $brand=$products->pluck('brand');
+        // 判断是否有提交 search 参数，如果有就赋值给 $search 变量
+        // search 参数用来模糊搜索商品
+        return view('products.index',['products'=>$products,'categories'=>$categories,'brand'=>$brand]);
     }
 
     /**
@@ -27,7 +31,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show',['product'=>$product]);
     }
 
 }

@@ -18,6 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('categories', 'CategoryController');
+Route::get('product','ProductController@index');
+Route::get("product/{product}",'ProductController@show');
+Route::post("msg",'MsgController@store');
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -72,7 +72,7 @@
             <div class="atz-pr" id="index-login-userinfo"><a class="login" href="/login/" rel="nofollow">登录</a><a
                     class="reg" href="/register/" rel="nofollow">注册</a><span></span><a class="wcQrcodeSwitch"
                     href="javascript:void(0);"><em>微信端</em>
-                    <div><img src="https://www.aiterent.com/images/wc_qrcode.jpg"></div>
+                    <div><img src="/images/wc_qrcode.jpg"></div>
                 </a><em>|</em><a class="service" target="_blank" href="/article/42">服务中心</a> </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
         <div class="layout">
             <div class="atz-pl">
                 <div class="atz-brand">
-                    <a href="/"> <img alt="艾特租办公电脑租赁logo图片" src="https://www.aiterent.com/images/atz_logo.png"> </a>
+                    <a href="/"> <img alt="艾特租办公电脑租赁logo图片" src="/images/atz_logo.png"> </a>
                     <div style="display:none;">
                         <h1>租电脑</h1><span>笔记本租用、办公电脑租赁、笔记本电脑租赁</span>
                     </div>
@@ -88,7 +88,7 @@
             </div>
             <div class="atz-pl">
                 <div class="atz-slogan">
-                    <a href="/"> <img src="https://www.aiterent.com/images/slogan.png"> </a>
+                    <a href="/"> <img src="/images/slogan.png"> </a>
                 </div>
             </div>
             <div class="atz-pr">
@@ -102,16 +102,16 @@
             <div class="atz-pr">
                 <div class="atz-search">
                     <input type="text" id="searchparam">
-                    <a href="javascript:void(0)" onclick="searchKeyword()"></a>
+                    <a href="/product" onclick="searchKeyword()"></a>
                 </div>
                 <div class="atz-labels">
-                    <a href="/list/b3">ThinkPad</a>
-                    <a href="/list/b9">机械革命</a>
-                    <a href="/list/c14">服务器</a>
-                    <a href="/list/c1">笔记本</a>
-                    <a href="/list/b4">Dell</a>
-                    <a href="/list/b2">HP</a>
-                    <a href="/list/b1">清华同方</a>
+                    <a href="/product">ThinkPad</a>
+                    <a href="/product">机械革命</a>
+                    <a href="/product">服务器</a>
+                    <a href="/product">笔记本</a>
+                    <a href="/product">Dell</a>
+                    <a href="/product">HP</a>
+                    <a href="/product">清华同方</a>
                 </div>
             </div>
         </div>
@@ -123,52 +123,52 @@
                 <div class="menu">
                     <div class="item">
                         <h3 class="ico_1">
-                            <a href="/computer">办公电脑</a>
+                            <a href="/product">办公电脑</a>
                         </h3>
-                        <a href="/list/c1">笔记本</a>
-                        <a href="/list/c2">台式机</a>
-                        <a href="/list/c3">一体机</a>
-                        <a href="/list/c4">主机</a>
+                        <a href="/product">笔记本</a>
+                        <a href="/product">台式机</a>
+                        <a href="/product">一体机</a>
+                        <a href="/product">主机</a>
                     </div>
                     <div class="item">
                         <h3 class="ico_2">
-                            <a href="/equipment">办公设备</a>
+                            <a href="/product">办公设备</a>
                         </h3>
-                        <a href="/list/c6">打印机</a>
-                        <a href="/list/c23">复印机</a>
-                        <a href="/list/c7">显示器</a>
-                        <a href="/list/c11">碎纸机</a>
-                        <a href="/list/c12">手机</a>
-                        <a href="/list/c8">平板</a>
-                        <a href="/list/c9">配件</a>
-                        <a href="/list/c10">投影仪</a>
+                        <a href="/product">打印机</a>
+                        <a href="/product">复印机</a>
+                        <a href="/product">显示器</a>
+                        <a href="/product">碎纸机</a>
+                        <a href="/product">手机</a>
+                        <a href="/product">平板</a>
+                        <a href="/product">配件</a>
+                        <a href="/product">投影仪</a>
                     </div>
                     <div class="item">
                         <h3 class="ico_3">
-                            <a href="/jifang">机房建设</a>
+                            <a href="/product">机房建设</a>
                         </h3>
-                        <a href="/list/c14">服务器</a>
-                        <a href="/list/c15">磁带库</a>
-                        <a href="/list/c16">网络设备</a>
-                        <a href="/list/c17">UPS</a>
+                        <a href="/product">服务器</a>
+                        <a href="/product">磁带库</a>
+                        <a href="/product">网络设备</a>
+                        <a href="/product">UPS</a>
                     </div>
                     <div class="item">
                         <h3 class="ico_4">
-                            <a href="/service">增值服务</a>
+                            <a href="/product">增值服务</a>
                         </h3>
-                        <a href="/list/c19">计次上门</a>
-                        <a href="/list/c20">驻场服务</a>
-                        <a href="/list/c21">企业培训</a>
-                        <a href="/list/c22">软件定制</a>
+                        <a href="/product">计次上门</a>
+                        <a href="/product">驻场服务</a>
+                        <a href="/product">企业培训</a>
+                        <a href="/product">软件定制</a>
                     </div>
                     <div class="item">
                         <h3 class="ico_5">
-                            <a href="/list/">价格区间</a>
+                            <a href="/product">价格区间</a>
                         </h3>
-                        <a href="/list/p1">￥0 - ￥99</a>
-                        <a href="/list/p2">￥100 - ￥199</a>
-                        <a href="/list/p3">￥200 - ￥299</a>
-                        <a href="/list/p4">￥300以上</a>
+                        <a href="/product">￥0 - ￥99</a>
+                        <a href="/product">￥100 - ￥199</a>
+                        <a href="/product">￥200 - ￥299</a>
+                        <a href="/product">￥300以上</a>
                     </div>
                 </div>
             </div>
@@ -182,16 +182,16 @@
                 </span><em class="showy">活动</em></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/list/t5" target="_blank"><span>快速租赁</span></a>
+            <a href="/product" target="_blank"><span>快速租赁</span></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/list/a1-x1" target="_blank"><span>新机租赁</span></a>
+            <a href="/product" target="_blank"><span>新机租赁</span></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/list/t6" target="_blank"><span>短期租赁</span> </a>
+            <a href="/product" target="_blank"><span>短期租赁</span> </a>
         </div>
         <div class="atz-nav-item">
-            <a href="/recycle" target="_blank"><span>绿色回收</span> </a>
+            <a href="/product" target="_blank"><span>绿色回收</span> </a>
         </div>
     </div>
 </div>
