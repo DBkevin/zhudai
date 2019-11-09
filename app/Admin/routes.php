@@ -21,6 +21,8 @@ Route::group([
     $router->resource('products', ProductsController::class);
     $router->resource('msgs', MsgController::class);
     $router->resource('category2s', category2Controller::class);
+    $router->resource('banners', BannerController::class);
+
 
 
 });

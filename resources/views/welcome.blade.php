@@ -42,20 +42,10 @@
 <div class="atz-banner-swiper">
     <div class="swiper-container">
         <div class="swiper-wrapper" id="bannerIndex">
-            <a href="https://www.aiterent.com/promotion/" class="swiper-slide" data-title="电商节"
-                style="background-image:url('http://oss.aiterent.com/files/2019/10/1571128372509132.jpg'); background-color:'1';"></a>
-            <a href="https://www.aiterent.com/product/1805170003" class="swiper-slide" data-title="ThinkPad X230 "
-                style="background-image:url('http://oss.aiterent.com/files/2019/09/1567403356559181.jpg'); background-color:'2';"></a>
-            <a href="https://www.aiterent.com/product/1805180003" class="swiper-slide" data-title="ThinkPad T430"
-                style="background-image:url('http://oss.aiterent.com/files/2019/10/1572339084170733.jpg'); background-color:'2';"></a>
-            <a href="https://www.aiterent.com/product/1809300003" class="swiper-slide" data-title="ThinkPad T440"
-                style="background-image:url('http://oss.aiterent.com/files/2019/09/1567403270458658.jpg'); background-color:'3';"></a>
-            <a href="/product/1904300001" class="swiper-slide" data-title="全新 麦本本 金麦6A"
-                style="background-image:url('http://oss.aiterent.com/files/2019/09/1567403317182654.jpg'); background-color:'4';"></a>
-            <a href="/product/1906140002" class="swiper-slide" data-title="超扬Y2150-036"
-                style="background-image:url('http://oss.aiterent.com/files/2019/09/1567473805922211.jpg'); background-color:'5';"></a>
-            <a href="https://www.aiterent.com/product/1907010001" class="swiper-slide" data-title="ThinkPad T430S 短租"
-                style="background-image:url('http://oss.aiterent.com/files/2019/09/1567403527652176.jpg'); background-color:'6';"></a>
+            @foreach ($banners as $item)
+                 <a href="/product/{{$item->id}}" class="swiper-slide" data-title="{{$item->name}}"
+                style="background-image:url('/storage/{{$item->image}}'); background-color:'1';"></a>
+            @endforeach
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
