@@ -8,6 +8,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Models\Category;
+use App\Models\Category2;
 
 class ProductsController extends  AdminController
 {
@@ -31,12 +32,16 @@ class ProductsController extends  AdminController
         $grid->title("商品名称");
         $grid->column('category.name', '所属栏目');
         $grid->brand('商品品牌');
+        $grid->column('category2.catename', '所属首页栏目');
         $grid->price('价格（最低价）');
         $grid->on_sale('已上架')->display(function ($value) {
             return $value ? '是' : '否';
         });
         $grid->options('增值服务')->display(function ($value) {
             return $value ? $value : '无';
+        });
+        $grid->hot('首页显示')->display(function ($value) {
+            return $value ?"是" : '无';
         });
         $grid->actions(function ($actions) {
             $actions->disableView();
@@ -70,6 +75,9 @@ class ProductsController extends  AdminController
                 return 'required|image';
             }
         })->help("请上传图片，多张图片请按【Ctrl】选择");
+         $form->select('category2_id', '类目')->options(
+               Category2::all()->pluck('catename','id')
+        );
         $form->UEditor('description', '商品详情')->rules('required');
         $form->UEditor('attrbuite', '商品参数')->rules('required')->default("具体参数以实物为准");
         $form->text('options', '增值服务')->default(null)->help('不填为空');
@@ -78,9 +86,12 @@ class ProductsController extends  AdminController
             'on' => ['value' => 1, 'text' => '全新', 'color' => 'success'],
             'off' => ['value' => 0, 'text' => '二手', 'color' => 'danger'],
         ];
+       
         $form->switch('type', '是否全新')->states($states)->default('1');
         // 创建一组单选框
         $form->radio('on_sale', '上架')->options(['1' => '是', '0' => '否'])->default('1');
+        // 创建一组单选框
+        $form->radio('hot', '上架')->options(['1' => '是', '0' => '否'])->default('1')->help("勾选是会出现首页热销栏目");
         // 直接添加一对多的关联模型
         $form->hasMany('skus', 'SKU 列表', function (Form\NestedForm $form) {
             $form->text('title', 'SKU 名称')->rules('required');

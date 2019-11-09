@@ -20,5 +20,7 @@ Route::group([
     $router->get('api/categories', 'CategoriesController@apiIndex');
     $router->resource('products', ProductsController::class);
     $router->resource('msgs', MsgController::class);
+    $router->resource('category2s', category2Controller::class);
+
 
 });
