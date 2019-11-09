@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+
 class Product extends Model
 {
     //允许写入字段
@@ -27,7 +28,7 @@ class Product extends Model
      * @return void
      */
     public function category2(){
-        return $this->belongsTo(Category2::class);
+        return $this->belongsTo(Category2::class,'category2_id');
     }
     /**
      * 一对多关联sku表
