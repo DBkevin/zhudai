@@ -11,10 +11,15 @@
 |
 */
 
+//子域名设置为m.laravel.com 命名空间为 Admin
+Route::group(['domain' => "m.".env('APP_URL')],function (){
+    Route::get('/','MindexController@index');
+    Route::get('/product','MProductsController@index');
+    Route::get('/product/{product}','MProductsController@show');
+});
+
 Route::get('/', 'IndexController@index');
-
 Auth::routes();
-
 Route::resource('categories', 'CategoryController');
 Route::get('product','ProductController@index');
 Route::get("product/{product}",'ProductController@show');

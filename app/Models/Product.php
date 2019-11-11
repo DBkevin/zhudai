@@ -44,6 +44,7 @@ class Product extends Model
             $this->attributes['images']=json_encode($images);
         }
     }
+
     public function getImagesAttribute($images){
         return json_decode($images,true);
     }
