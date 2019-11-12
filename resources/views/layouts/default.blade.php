@@ -11,7 +11,7 @@
     var urlhash = window.location.hash;
     if (!urlhash.match("fromapp")) {
         if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {
-            window.location = "http://huiqushi.cn";
+            window.location = "http://m.huiqushi.cn";
         }
     }
 }
