@@ -5,9 +5,8 @@
 @stop
 @section('content')
 <header id="header_gjprXFZK" atz-skin="primary" atz-pos="fixed">
-    <a href="javascript:;" class="atz-back-button" onclick="goBack()"></a>
+    <a href="/" class="atz-back-button" ></a>
     <span class="atz-header-title">商品详情</span>
-    <a href="javascript:void(0);" class="atz-null-button"></a>
 </header>
 <div class="atz-section product" block="true">
     <!--产品图片轮播-->
@@ -300,6 +299,11 @@
         $("#ljzx").show();
         $("#ljzx>.choose-module-container").addClass("fadeInUp").removeClass("fadeOutDown");
     });
+     $("#ljzx .close-configuration").unbind("click").bind("click", function () {
+        $("body").removeClass("overHide");
+        $("#ljzx").hide();
+    });
+
     function navFixed() {
     $(window).scroll(function(){
         if($(this).scrollTop() >= ($("#tonglanpaiban03").position().top - 44)){
