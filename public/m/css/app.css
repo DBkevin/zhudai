@@ -323,7 +323,7 @@ header a.atz-null-button {
 }
 
 header[atz-skin="primary"] {
-    background: #e95504;
+    background: #e95504 !important;
 }
 
 header[atz-skin="primary"] * {

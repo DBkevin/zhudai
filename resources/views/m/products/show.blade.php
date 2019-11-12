@@ -247,33 +247,25 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOxJREFUeNqc078OgjAQBvB6IbiYuLu7sDu4uTuJm5vvoRETZnwEo4P6Gu59Iie/S46ENPTfNfmglPIL0Ouk67qlMaZBjsjP6FuJ3NkqcLghW2SKHJQwg2+kRuaEg5Ube+QlE7QgN0vy6Vcl7ILsNCQXGngU5A4NJuXAXtBFU+EgOIbG4CjoQ33wLAXkVgQWon/gIvAaWcTA0JsO4Vb6PdiGwBSU/2HljFWxcqOMOvzKuZbxMhcdW+XNYPGCMGUWdpMCU25hp8CUCSbBpACjMEnnkwkGYUafyE4B+uAHb9OT7GurAN0tvULOfwEGAC0YSe6J3TjUAAAAAElFTkSuQmCC"
                 alt="">
         </div>
-        <div class="choose-product" style="padding-bottom:200px">
-            <div class="content right">
-                <label class="atz-checkbox-01 atz-checkbox-01-hover">
-                    商品名称
-                    <input type="text" name="product_name" value="{{$product->title}}">
-                </label>
-            </div>
-            <div class="content right">
-                <label class="atz-checkbox-01 atz-checkbox-01-hover">
-                    请输入您的姓名
-                    <input type="text" name="name" value="">
-                </label>
-            </div>
-            <div class="border-box">
-                <div class="border"></div>
-            </div>
-            <div class="content right">
-                <label class="atz-checkbox-01 atz-checkbox-01-hover">
-                    请输入您的电话
-                    <input type="text" name="phone" value="">
-                </label>
-            </div>
-            <button class="ljtj" id="ljtj" style="width:50%;height:30px">
-                立即提交
-            </button>
-            <div class="border-box">
-                <div class="border"></div>
+        <div class="choose-product" style="padding-bottom:220px">
+            <div class="choose-product-text">
+                <ul>
+                    <li>
+                        <span>商品名称</span>
+                        <input type="text" name="product_name" value="{{$product->title}}">
+                    </li>
+                    <li>
+                        <span>您的姓名</span>
+                        <input type="text" name="name" value="">
+                    </li>
+                    <li>
+                        <span>您的电话</span>
+                        <input type="text" name="phone" value="">
+                    </li>
+                </ul>
+                    <button class="ljtj" id="ljtj" style="width:50%;height:30px;background:#ea5504;color:#fff; margin:0 auto; display:block ; ">
+                        立即提交
+                    </button>
             </div>
         </div>
 
@@ -360,6 +352,36 @@
             }
         });
     });
+    function setrentTime() {
+    // 获取当前选中的租赁方式
+    var wId = $("#ways label input:checked").attr("wid"),curTime=new Date(),minDate="",maxDate="";
+    if (wId == 4) {
+        curTime=new Date(new Date().getTime()+1000*60*60*24*1);
+        minDate= curTime.getFullYear()+"-"+dateReg(curTime.getMonth()+1)+"-"+curTime.getDate();
+    } else {
+        /**三天后起租**/
+        curTime=new Date(new Date().getTime()+1000*60*60*24*3);
+        minDate= curTime.getFullYear()+"-"+dateReg(curTime.getMonth()+1)+"-"+curTime.getDate();
+    }
+    if (curTime.getMonth()>=11) {
+        maxDate = (curTime.getFullYear()+1)+"-01"+"-"+curTime.getDate();
+    } else {
+        maxDate = curTime.getFullYear()+"-"+dateReg(curTime.getMonth()+2)+"-"+curTime.getDate();
+    }
+    $("#beginDate").val(minDate);
+    /** 更新价格 **/
+
+    function dateReg (date) {
+        /**日期格式**/
+        if (date<10) {
+            date="0"+date;
+        }
+        return date;
+    }
+}
+ 
+
 navFixed();
+setrentTime() ;
 </script>
 @stop
