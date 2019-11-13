@@ -75,6 +75,8 @@
                                 <label class="atz-radio-01 sku">
                                 <input checked="checked" data-id="{{$item->id}}" ibh="{{$item->id}}"
                                     name="cf" type="radio">
+                                    <input type="hidden" name="price" value="{{$item->price}}">
+                                    <input type="hidden" name="stock" value="{{ $item->stock}}">
                                 <span><img src="/storage/{{$product->images[0]}}" />
                                        {{$item->title}}
                                     </span>

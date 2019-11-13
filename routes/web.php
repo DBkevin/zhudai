@@ -24,6 +24,8 @@ Route::resource('categories', 'CategoryController');
 Route::get('product','ProductController@index');
 Route::get("product/{product}",'ProductController@show');
 Route::post("msg",'MsgController@store');
+Route::get('recycle','recycleController@index');
+Route::post('recycle','recycleController@store');
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
