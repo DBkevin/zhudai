@@ -90,7 +90,7 @@
 .floor .floor-main a p{display:block;font-size:12px;overflow:hidden;color:#333;padding:0 10px;height: 32px;line-height: 16px;white-space: normal;}
 .floor .floor-main a span{font-size:12px;display:block;margin-top:5px;color:#fe4f25}
 .floor .floor-main a span i:before{content:'\FFE5'}
-.floor .floor-main a strong{font-weight:400;line-height:27px;display:none;width:145px;height:27px;margin-top:20px;text-align:center;color:#fff;background:#ea5504}
+.floor .floor-main a strong{font-weight:400;line-height:27px;display:none;width:145px;height:27px;margin-top:20px;text-align:center;color:#fff;background:#8Fc34f}
 
 /*
     电话
@@ -218,8 +218,8 @@
 .auth-field.wCAPTCHA a img{width: 90px;height: 38px;}
 .auth-field .CAPTCHA:before{display: none;}
 .auth-field.gCode{width:100%;}
-.auth-field.gCode button{line-height:40px;position:absolute;top:0;right:0;width:92px;height:40px;transition:all .2s linear;text-align:center;color:#ea5504;background-color:#ffe1d1;}
-.auth-field.gCode button:hover{color:#ffe1d1;background-color:#ea5504;}
+.auth-field.gCode button{line-height:40px;position:absolute;top:0;right:0;width:92px;height:40px;transition:all .2s linear;text-align:center;color:#8Fc34f;background-color:#ffe1d1;}
+.auth-field.gCode button:hover{color:#ffe1d1;background-color:#8Fc34f;}
 .auth-field.gCode button.disabled{cursor:not-allowed;color:#999;background-color:#ccc;text-shadow:0 1px 0 #fff;}
 .auth-field.gCode button.disabled::before{background: none;}
 .auth-submit{clear:both; margin-top: 50px;}

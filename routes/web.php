@@ -25,11 +25,13 @@ Route::get('product','ProductController@index');
 Route::get("product/{product}",'ProductController@show');
 Route::post("msg",'MsgController@store');
 Route::get('recycle','recycleController@index');
-Route::post('recycle','recycleController@store');
+Route::post('recycle','reController@store');
 Route::view('promotion', 'promotion.index');
+Route::get('news','NewsController@index');
+Route::get("news/{news}",'NewsController@show');
 /*
 // 用户身份验证相关的路由
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('login', 'Auth\Loger@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 

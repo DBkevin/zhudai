@@ -11,7 +11,7 @@
 .detail .thumbnail{position: relative; width: 420px; margin-bottom: 20px;}
 .detail .thumbnail .small-box { position: relative; width: 420px; height: 420px;margin-bottom: 20px; border: 1px solid #dedede;}
 .detail .thumbnail .small-box img{display: block; width: 420px; height: 420px;}
-.detail .thumbnail .small-box .hover{display:none;position:absolute;left:0;top:0; width:200px !important; height:200px !important; border:1px solid #aaa;background:#ea5504;opacity:.2;filter:alpha(opacity=20);cursor:move}
+.detail .thumbnail .small-box .hover{display:none;position:absolute;left:0;top:0; width:200px !important; height:200px !important; border:1px solid #aaa;background:#8Fc34f;opacity:.2;filter:alpha(opacity=20);cursor:move}
 .detail .thumbnail .thumbnail-box{position:relative;width:100%}
 .detail .thumbnail .thumbnail-box .btn{position:absolute;top:50%;width:22px;height:32px;margin-top:-16px; }
 .detail .thumbnail .thumbnail-box .btn-prev{left:0; background-position: -38px 0;}
@@ -20,7 +20,7 @@
 .detail .thumbnail .thumbnail-box .wrapper{width:100000px}
 .detail .thumbnail .thumbnail-box .list .item{float:left;margin:0 10px}
 .detail .thumbnail .thumbnail-box .list .item img{border:1px solid #fff; width: 55px; height: 55px;}
-.detail .thumbnail .thumbnail-box .list .item-cur img{border:1px solid #ea5504}
+.detail .thumbnail .thumbnail-box .list .item-cur img{border:1px solid #8Fc34f}
 .detail .thumbnail .big-box{display:none;overflow:hidden;position:absolute;left:440px;top:0; background: #fff; z-index: 1001; width:440px;height:440px;border:1px solid #e4e4e4}
 .detail .thumbnail .big-box img{display:block; width: 800px; height: 800px;}
 .detail .atz-pr{ width: 730px; padding: 15px 25px;}
@@ -30,7 +30,7 @@
 .detail .basic .price em{color: #2d2e31; font-size: 16px; vertical-align: middle;}
 .detail .basic .price span{color: #fe4f25; font-size: 28px;  font-family: Arial, Helvetica, sans-serif;  font-weight: bold; vertical-align: middle; padding-right: 5px;}
 .detail .basic .price span:before{content: "\FFE5"; font-size: 20px;}
-.detail .basic .price .tag{background: #ea5504; color: #fff; padding: 3px 10px; border-radius: 5px; white-space: nowrap; vertical-align: middle;}
+.detail .basic .price .tag{background: #8Fc34f; color: #fff; padding: 3px 10px; border-radius: 5px; white-space: nowrap; vertical-align: middle;}
 .detail .condition{clear: both;}
 .detail .condition dl{width: 100%; clear: both;}
 .detail .condition dt{color: #83868f; width: 80px; float: left;padding: 7px 0 0;}
@@ -44,10 +44,10 @@
 .detail .condition dd .spinner .increase{width: 30px; height: 30px; cursor: pointer; float: left; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-color: #f2f2f2; border:1px solid #dedede; background-position: -1px -121px;}
 .detail .condition dd .nostore{font-style: normal;margin-left: 10px;}
 .detail .condition dd .nostore b{font-weight: normal;}
-.detail .condition dd .nostore.warn{ color: #ea5504; }
+.detail .condition dd .nostore.warn{ color: #8Fc34f; }
 .detail .condition dd .pledge {padding-bottom: 7px;}
 .detail .condition dd .pledge span{color: #2d2e31; padding-right: 10px;}
-.detail .condition dd .pledge span em{color: #ea5504;}
+.detail .condition dd .pledge span em{color: #8Fc34f;}
 .detail .condition dd .pledge span em:before{content: "\FFE5";}
 
 .detail .condition #config dt {padding-top: 10px;}
@@ -61,7 +61,7 @@
 .detail .service-ft-text{width: 400px; padding: 0 5px; color: #fe4f25;}
 .detail .service-ft-text *{max-width: 100%;}
 .atz-more-bar {clear: both; padding: 0 0 10px 0;}
-.atz-more-bar a{min-width: 80px;text-align: center;background:#ea5504; color:#fff; height:25px; line-height:25px; display:inline-block; padding: 0 12px;border-radius: 3px;font-size: 12px;}
+.atz-more-bar a{min-width: 80px;text-align: center;background:#8Fc34f; color:#fff; height:25px; line-height:25px; display:inline-block; padding: 0 12px;border-radius: 3px;font-size: 12px;}
 .atz-more-bar a:hover{opacity: .9; filter:alpha(opacity=90);}
 
 .atz-radio-bar{width: 100%; clear: both; margin-bottom: 5px; float:left;}
@@ -79,13 +79,13 @@
 .detail .total .buttons {padding: 25px 0;}
 .detail .total .buttons .button{ width: 150px; height: 45px; line-height: 45px; text-align: center; font-size: 20px; border-radius: 3px; display: inline-block; white-space: nowrap;}
 .detail .total .buttons .button:hover{opacity: .9; filter:alpha(opacity=90);}
-.detail .total .buttons .button.once{background: #ffece1; border:1px solid #ea5504; color: #ea5504; margin-right: 15px;vertical-align: middle;}
-.detail .total .buttons .button.addcart{background: #ea5504; border:1px solid #ea5504; color: #fff;vertical-align: middle;}
+.detail .total .buttons .button.once{background: #ffece1; border:1px solid #8Fc34f; color: #8Fc34f; margin-right: 15px;vertical-align: middle;}
+.detail .total .buttons .button.addcart{background: #8Fc34f; border:1px solid #8Fc34f; color: #fff;vertical-align: middle;}
 
 
 .group{border:1px solid #dedede;display: none;background: #fff;height: 320px;margin-top: 15px;padding-top: 15px;}
 .group-title{margin-bottom:15px; padding: 13px 10px; background: #fcfcfc;}
-.group-title span{font-size:18px;line-height:16px;display:inline-block;height:18px;padding-left:10px;vertical-align:middle;color:#2d2e31;border-left:4px solid #ea5504;}
+.group-title span{font-size:18px;line-height:16px;display:inline-block;height:18px;padding-left:10px;vertical-align:middle;color:#2d2e31;border-left:4px solid #8Fc34f;}
 .group .item{ float: left; width: 170px; position: relative; margin-left: 60px; padding: 0 0px 0 20px;}
 .group .item img{width: 140px; height: 140px; margin: 0 auto 10px auto; display: block;}
 .group .item:before{content: ""; width: 23px; height: 23px; background-position: -33px -63px; position: absolute; top:65px; left: -42px;}
@@ -100,14 +100,14 @@
 .group-right span{display: block; width: 100%; color: #2d2e31; font-size: 16px;}
 .group-right span i{color: #fe4f25; font-size: 28px; font-family: Arial, Helvetica, sans-serif; vertical-align: top; position: relative; top: 2px;}
 .group-right span i:before{content:"\FFE5"; font-size: 20px;}
-.group-right .addcart{width: 125px; height: 38px; line-height: 38px; text-align: center; font-size: 16px; margin-top: 25px; border-radius: 3px; display: inline-block; white-space: nowrap; background: #ea5504; border:1px solid #ea5504; color: #fff;}
+.group-right .addcart{width: 125px; height: 38px; line-height: 38px; text-align: center; font-size: 16px; margin-top: 25px; border-radius: 3px; display: inline-block; white-space: nowrap; background: #8Fc34f; border:1px solid #8Fc34f; color: #fff;}
 
 .info { background: #fff; margin: 45px 0 100px;}
 .info .tabs .buttons{ width: 100%; height: 52px; border:1px solid #dedede; background: #fcfcfc;}
 .info .tabs .buttons.buttons-fixed{position: fixed; top:0; width: 1200px; left: 50%; margin-left: -600px; z-index: 999;}
 .info .tabs .buttons a{width: 200px; height: 52px; line-height: 52px; position: relative; float: left; border-right:1px solid #dedede; display:block; text-align: center; color: #5a5c5f; font-size: 18px;}
 .info .tabs .buttons a.active{background: #fff;}
-.info .tabs .buttons a.active:before{content: ""; width: 202px; height: 3px; background: #ea5504; position: absolute; top: -1px; left: -1px;}
+.info .tabs .buttons a.active:before{content: ""; width: 202px; height: 3px; background: #8Fc34f; position: absolute; top: -1px; left: -1px;}
 .info .tabs .buttons a.active:after{content: ""; width: 100%; height: 1px; background: #fff; position: absolute; bottom: -1px; left: 0;}
 .info .tabs .panels{min-height: 900px;}
 .info .tabs .panels .panel{padding: 20px; display: none;}
@@ -121,11 +121,11 @@
 .info .tabs .panels .panel table tr td *{font-size: 14px; font-weight: normal;}
 .info .tabs .panels .panel .consult-tips{margin-bottom: 20px;}
 .info .tabs .panels .panel .consult-tips span{font-size: 16px; padding: 10px 0; color:#83868f;}
-.info .tabs .panels .panel .consult-tips em{color:#ea5504;}
+.info .tabs .panels .panel .consult-tips em{color:#8Fc34f;}
 
 .info .tabs .panels .panel .consult-form span{font-size: 16px; padding: 10px 0; color:#83868f; display: block;}
 .info .tabs .panels .panel .consult-form textarea{border:1px solid #ddd; width: 100%; height: 215px; resize: none; padding: 10px; font-size: 14px; color:#83868f;  box-sizing: border-box; -webkit-box-sizing: border-box;}
-.info .tabs .panels .panel .consult-form a{width: 125px; height: 38px; line-height: 38px; text-align: center; font-size: 16px; margin-top: 25px; display: block; float: right; white-space: nowrap; background: #ea5504; border:1px solid #ea5504; color: #fff;}
+.info .tabs .panels .panel .consult-form a{width: 125px; height: 38px; line-height: 38px; text-align: center; font-size: 16px; margin-top: 25px; display: block; float: right; white-space: nowrap; background: #8Fc34f; border:1px solid #8Fc34f; color: #fff;}
 
 .info .tabs .panels .panel .comment{clear: both;}
 .info .tabs .panels .panel .comment .item{width: 100%; padding: 10px 0; margin: 10px 0 50px; position: relative; border-bottom: 1px solid #ededed;}
@@ -139,7 +139,7 @@
 .info .tabs .panels .panel .pagination{padding: 20px;box-sizing: border-box; -webkit-box-sizing: border-box;}
 .info .tabs .panels .panel .pagination a{border:0; margin: 0 5px; border-right: 0;  font-size: 14px;}
 .info .tabs .panels .panel .pagination a:last-child{ border-right:0;}
-.info .tabs .panels .panel .pagination a.active{background-color: #ea5504; color: #fff; border-radius: 5px;}
+.info .tabs .panels .panel .pagination a.active{background-color: #8Fc34f; color: #fff; border-radius: 5px;}
 
 .info .tabs .panels .panel .consult-list .item{border-bottom: 1px dashed #ededed; padding-bottom: 10px;}
 .info .tabs .panels .panel .consult-list .item .hd{color: #999; padding-bottom: 10px;}
@@ -147,7 +147,7 @@
 .info .tabs .panels .panel .consult-list .item .cd span{display: block; color: #333;}
 .info .tabs .panels .panel .consult-list .item .cd p{line-height: 28px; text-indent: 2em; word-break: break-all;}
 .info .tabs .panels .panel .consult-list .item .bd span{display: block; color: #333;}
-.info .tabs .panels .panel .consult-list .item .bd p{line-height: 28px; text-indent: 2em; word-break: break-all; color:#ea5504;}
+.info .tabs .panels .panel .consult-list .item .bd p{line-height: 28px; text-indent: 2em; word-break: break-all; color:#8Fc34f;}
 
 .layui-laydate-content .laydate-day-next,
 .layui-laydate-content .laydate-day-prev {color: #666 !important;}
