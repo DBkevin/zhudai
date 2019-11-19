@@ -50,7 +50,7 @@ class ArticleNewController extends AdminController
         $form = new Form(new ArticleNew);
 
         $form->text('title', '文章标题')->creationRules('required|unique:article_news|min:3');
-        $form->image('image', '文章缩略图')->rules('required');
+        $form->image('image', '文章缩略图')->rules('required')->help('图片尺寸800*200');
         $form->UEditor('body','文章内容')->rules('required');
         $form->number('views', '浏览次数')->default(0)->help('可不填，不填随机生成');
 

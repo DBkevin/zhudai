@@ -2,6 +2,7 @@
 @section('title','行业咨询')
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/article.css')}}">
+
 @endsection
 @section('content')
 <div class="atz-content">

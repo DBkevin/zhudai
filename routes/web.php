@@ -34,6 +34,8 @@ Route::get('article/about','ArticleController@about');
 Route::get('article/about','ArticleController@about');
 Route::get('article/concat','ArticleController@concat');
 Route::get('article/cooperation','ArticleController@cooperation');
+Route::get('article/news','ArticleNewController@index');
+Route::get('article/news/{articleNew}','ArticleNewController@show');
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\Loger@showLoginForm')->name('login');

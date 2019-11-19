@@ -15,7 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         //
-        $news=News::query()->paginate(1);
+        $news=News::query()->paginate(12);
         $products=Product::query()->where('on_sale',true)->limit(6)->get();
         return view('news.index',['news'=>$news,'products'=>$products]);
     }

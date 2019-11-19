@@ -14,29 +14,11 @@ class ArticleNewController extends Controller
      */
     public function index()
     {
-        //
+        $news=ArticleNew::query()->paginate(20);
+        return view('articlenews.index',compact('news'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -47,39 +29,8 @@ class ArticleNewController extends Controller
     public function show(ArticleNew $articleNew)
     {
         //
+        $new=ArticleNew::query($articleNew->id)->first();
+        return view('articlenews.show',['new'=>$new]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ArticleNew  $articleNew
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ArticleNew $articleNew)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ArticleNew  $articleNew
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ArticleNew $articleNew)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ArticleNew  $articleNew
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ArticleNew $articleNew)
-    {
-        //
-    }
 }
