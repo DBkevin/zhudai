@@ -44,7 +44,7 @@
 section{margin-bottom: 60px;}
 footer{height: 44px;position: fixed;bottom: 0;width: 100%;background: #fff;border-top: 1px solid #eee;z-index: 8888;}
 .total span{ font-size: 16px;}
-.total em{color:#fe4f25; font-size: 28px; font-family: Arial, Helvetica, sans-serif; position: relative; top:2px;}
+.total em{color:#8Fc34f; font-size: 28px; font-family: Arial, Helvetica, sans-serif; position: relative; top:2px;}
 .total .buttons {height: 44px;line-height: 44px;}
 .total .buttons .button{display: inline-block;white-space: nowrap;margin-left: 10px; }
 .total .buttons .button.goindex{font-size: 12px;background: url(../images/product_index_ico.png) 0 14px no-repeat;background-size: 13px;padding-left: 20px;}

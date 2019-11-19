@@ -32,6 +32,6 @@
 .list .item .desc{padding: 10px 15px 10px 15px; text-align: center;}
 .list .item .desc p{ color:#2d2e31; font-size: 14px; height: 40px; line-height: 20px; overflow: hidden; margin-bottom: 5px;}
 .list .item .desc span{display: block; width: 100%; color: #83868f; font-size: 16px; margin-top: 5px;}
-.list .item .desc span em{color:#fe4f25; font-size: 26px; font-family: Arial, Helvetica, sans-serif;}
+.list .item .desc span em{color:#8Fc34f; font-size: 26px; font-family: Arial, Helvetica, sans-serif;}
 .list .item .desc span em:before{content: "\FFE5"; font-size: 20px;}
-.list .item .desc span i{color:#fe4f25; font-size: 20px; font-family: Arial, Helvetica, sans-serif;}
+.list .item .desc span i{color:#8Fc34f; font-size: 20px; font-family: Arial, Helvetica, sans-serif;}

@@ -7,36 +7,8 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -47,39 +19,27 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
+        $new=Article::query()->where('id',$article->id)->first();
+        $group_type1=Article::query()->where('type','租机说明')->get();
+        $group_type2=Article::query()->where('type','客服中心')->get();
+        $group_type3=Article::query()->where('type','常见问题')->get();
+        $group_type4=Article::query()->where('type','售后服务')->get();
+        $group_type5=Article::query()->where('type','支付问题')->get();
+        $top=Article::query()->where('id',4)->first();
+        return view('article.show',['new'=>$new,'group_type1'=>$group_type1,'group_type2'=>$group_type2,'group_type3'=>$group_type3,'group_type4'=>$group_type4,'group_type5'=>$group_type5,'top'=>$top]);
+    }
+    public function cooperation(){
+        $new=Article::query()->where('id','3')->first();
+        return view('article.about',['new'=>$new]);
+    }
+    public function concat(){
+        $new=Article::query()->where('id','2')->first();
+        return view('article.about',['new'=>$new]);
+    }
+     public function about(){
+        $new=Article::query()->where('id','1')->first();
+        return view('article.about',['new'=>$new]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Article $article)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Article $article)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Article $article)
-    {
-        //
-    }
+   
 }

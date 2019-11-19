@@ -1,17 +1,17 @@
 .atz-header .atz-hd .atz-pr .atz-cart-widget{margin-left:40px;}
 .atz-s-nav{font-size:18px;margin:50px 20px 0;}
 .atz-s-nav a{display:inline-block;margin:0 20px 0 0;}
-.atz-s-nav a.index{color:#fe4f25;}
+.atz-s-nav a.index{color:#8Fc34f;}
 .atz-menu{float:left;width:220px;margin-right:20px;margin-bottom:88px;background-color:#fff;}
-.atz-menu strong{line-height:44px;display:block;height:44px;margin-bottom:10px;text-align:center;color:#fff;background-color:#fe4f25;}
+.atz-menu strong{line-height:44px;display:block;height:44px;margin-bottom:10px;text-align:center;color:#fff;background-color:#8Fc34f;}
 .atz-menu .group span{font-size:18px;font-weight:700;line-height:42px;display:block;height:42px;padding-left:30px;color:#666;}
 .atz-menu .group a{font-size:14px;line-height:38px;display:block;height:38px;padding-left:26px;color:#83868f;border-left:4px solid #fff; background-color:#fff;}
-.atz-menu .group a.active{color:#fe4f25;border-left:4px solid #fe4f25;background-color:#fff7f2;}
-.atz-menu .group a:hover{color:#fe4f25;border-left:4px solid #fe4f25;background-color:#fff7f2;}
+.atz-menu .group a.active{color:#8Fc34f;border-left:4px solid #8Fc34f;background-color:#fff7f2;}
+.atz-menu .group a:hover{color:#8Fc34f;border-left:4px solid #8Fc34f;background-color:#fff7f2;}
 .atz-menu .group .sub{padding-left: 10px;}
 .atz-menu .group .sub a{font-size: 13px;}
-.atz-menu .group .sub a.active{color:#fe4f25;border-left:4px solid #fff;background-color:#fff;}
-.atz-menu .group .sub a:hover{color:#fe4f25;border-left:4px solid #fff;background-color:#fff;}
+.atz-menu .group .sub a.active{color:#8Fc34f;border-left:4px solid #fff;background-color:#fff;}
+.atz-menu .group .sub a:hover{color:#8Fc34f;border-left:4px solid #fff;background-color:#fff;}
 .atz-article{float:left;width:880px;margin-right: 20px;min-height:980px;margin-bottom:88px;background-color:#fff;}
 .atz-article-title{font-size:26px;line-height:40px;margin:20px 45px;text-align:center;color:#333;}
 .atz-article-content{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0 40px 40px;}

@@ -29,6 +29,11 @@ Route::post('recycle','reController@store');
 Route::view('promotion', 'promotion.index');
 Route::get('news','NewsController@index');
 Route::get("news/{news}",'NewsController@show');
+Route::get('article/{article}','ArticleController@show')->where(['article'=>'[0-9]+']);
+Route::get('article/about','ArticleController@about');
+Route::get('article/about','ArticleController@about');
+Route::get('article/concat','ArticleController@concat');
+Route::get('article/cooperation','ArticleController@cooperation');
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\Loger@showLoginForm')->name('login');
