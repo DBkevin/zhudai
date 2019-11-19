@@ -71,16 +71,24 @@
                         <dt>选择配置：</dt>
                         <dd class="config-tag">
                             <!--配置属性-->
-                            @foreach ($product->skus as $item)
+                            @foreach ($product->skus as $key=>$item)
+                                @if ($key==0)
                                 <label class="atz-radio-01 sku">
                                 <input checked="checked" data-id="{{$item->id}}" ibh="{{$item->id}}"
                                     name="cf" type="radio">
-                                    <input type="hidden" name="price" value="{{$item->price}}">
-                                    <input type="hidden" name="stock" value="{{ $item->stock}}">
-                                <span><img src="/storage/{{$product->images[0]}}" />
+                                    <span><img src="/storage/{{$product->images[0]}}" />
                                        {{$item->title}}
                                     </span>
-                            </label>
+                                </label>
+                                @else
+                                <label class="atz-radio-01 sku">
+                                <input data-id="{{$item->id}}" ibh="{{$item->id}}"
+                                    name="cf" type="radio">
+                                    <span><img src="/storage/{{$product->images[0]}}" />
+                                       {{$item->title}}
+                                    </span>
+                                </label>
+                                @endif
                             @endforeach
                            
                         </dd>
@@ -112,18 +120,67 @@
                     <dl id="ways">
                         <dt>租赁方式：</dt>
                         <dd>
-                            <div class="atz-radio-bar atz-radio-bar-default">
+                             <div class="atz-radio-bar atz-radio-bar-default">
                                 <label class="atz-radio">
                                     <input checked="checked" data-id="4528" name="c" pid="185" type="radio" value="185">
-                                    <span>每周租金 {{$product->proce_num}},租期 12月</span>
+                                    <span>{{$product->skus[0]->type1}}</span>
                                 </label>
-                                <i class="tag tag_1">固定租赁
-                                </i>
+                                <i class="tag tag_1">{{$product->skus[0]->type1category}}</i>
                                 <em class="tips">
-                                    （到期归还）
+                                    {{$product->skus[0]->type1_descript}}
                                 </em>
                             </div>
+                            @if ($product->skus[0]->type2)
+                                <div class="atz-radio-bar ">
+                                <label class="atz-radio">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <span>{{$product->skus[0]->type2}}</span>
+                                </label>
+                                <i class="tag tag_1">{{$product->skus[0]->type2category}}</i>
+                                <em class="tips">
+                                    {{$product->skus[0]->type2_descript}}
+                                </em>
+                                </div>
+                            @endif
+                             @if ($product->skus[0]->type3)
+                                <div class="atz-radio-bar ">
+                                <label class="atz-radio">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <span>{{$product->skus[0]->type3}}</span>
+                                </label>
+                                <i class="tag tag_1">{{$product->skus[0]->type3category}}</i>
+                                <em class="tips">
+                                    {{$product->skus[0]->type3_descript}}
+                                </em>
+                                </div>
+                            @endif
+                             @if ($product->skus[0]->type4)
+                                <div class="atz-radio-bar ">
+                                <label class="atz-radio">
+                                    <input  data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <span>{{$product->skus[0]->type4}}</span>
+                                </label>
+                                <i class="tag tag_1">{{$product->skus[0]->type4category}}</i>
+                                <em class="tips">
+                                    {{$product->skus[0]->type4_descript}}
+                                </em>
+                                </div>
+                            @endif
+                             @if ($product->skus[0]->type5)
+                                <div class="atz-radio-bar ">
+                                <label class="atz-radio">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <span>{{$product->skus[0]->type5}}</span>
+                                </label>
+                                <i class="tag tag_1">{{$product->skus[0]->type5category}}</i>
+                                <em class="tips">
+                                    {{$product->skus[0]->type5_descript}}
+                                </em>
+                                </div>
+                            @endif
+                           
                             <div class="atz-more-bar"><a href="javascript:void(0);" id="atz-more-bar" >更多租赁方式请联系</a></div>
+                            
                         </dd>
                     </dl>
 
@@ -275,5 +332,20 @@ $('#ljtx').on('click',function(){
             }
         });
     });
+     $( " dd .atz-more-bar").find("a").unbind("click").bind("click",
+        function() {
+            $( ".atz-radio-bar").is(":hidden") ? ($( " .atz-radio-bar").show(), $(this).text("收起")) : ($( " .atz-radio-bar").eq(0).siblings(".atz-radio-bar").hide(), $(" .atz-more-bar>a").text("查看更多租赁方式"))
+        })
+    $('.atz-radio-01 ').on('click', function(){
+    $.ajax({
+        url:'/sku/'+$('.atz-radio-01 input').attr('data-id'),
+        type:'get',
+        success:function(sku){
+            var jsons=JSON.parse(sku);
+            console.dir(jsons);
+            console.log(jsons['price']);
+        }
+    });
+  });
 </script>
 @endsection

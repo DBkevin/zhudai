@@ -23,6 +23,8 @@ Auth::routes();
 Route::resource('categories', 'CategoryController');
 Route::get('product','ProductController@index');
 Route::get("product/{product}",'ProductController@show');
+//Route::get('product-sku{id}','ProductController@showSku');
+Route::get('sku/{id}', 'ProductController@showSku');
 Route::post("msg",'MsgController@store');
 Route::get('recycle','recycleController@index');
 Route::post('recycle','reController@store');

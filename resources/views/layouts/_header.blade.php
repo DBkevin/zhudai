@@ -62,7 +62,7 @@
 <![endif]-->
     <div class="atz-mini-nav">
         <div class="layout">
-            <div class="atz-pl"> <span id="spanusername">您好，欢迎来到{{config('name')}}！</span>
+            <div class="atz-pl"> <span id="spanusername">您好，欢迎来到{{config('app.name')}}！</span>
                 <div style="display:none;">笔记本电脑租赁平台</div>
                 <a href="javascript:void(0);" style="display:none;" class="company_zmxy_link"><i>开通商家/企业芝麻分</i>
                     <div>开通企业信用分，获得更高额度，立享免押金租机。</div>
