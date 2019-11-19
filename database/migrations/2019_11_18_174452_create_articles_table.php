@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->comment('标题');
             $table->string('type')->nullable()->comment('所属类目');
-            $table->text('body')->comment('正文');
+            $table->longText('body')->comment('正文');
             $table->boolean('on_type')->default(false);
             $table->timestamps();
         });

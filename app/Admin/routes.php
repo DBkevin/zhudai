@@ -23,6 +23,7 @@ Route::group([
     $router->resource('category2s', category2Controller::class);
     $router->resource('banners', BannerController::class);
     $router->resource('news', NewsController::class);
+    $router->resource('articles', ArticleController::class);
 
 
 
