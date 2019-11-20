@@ -39,7 +39,8 @@ $(".tabs .buttons a").click(function () {
 
     $(".tabs .panels .panel").eq(_this.index()).addClass("active").siblings('.panel').removeClass("active");
 });
-selectWay();
+ setrentTime();
+/*selectWay();
 
 function selectWay() {
     setrentTime();
@@ -48,23 +49,27 @@ function selectWay() {
             setrentTime();
         }, 200);
     });
-}
+}*/
 function setrentTime() {
     // 获取当前选中的租赁方式
-    var wId = $("#ways dd .atz-radio-bar input:checked").attr("wid"),
+    /*var wId = $("#ways dd .atz-radio-bar input:checked").attr("wid"),
         curTime = new Date(),
         minDate = "",
         maxDate = "";
+        */
 
-    if (wId == 4) {
+   /* if (wId == 4) {
         curTime = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 1);
         minDate = curTime.getFullYear() + "-" + dateReg(curTime.getMonth() + 1) + "-" + dateReg(curTime.getDate());
     } else {
-        /**三天后起租**/
+        //三天后起租
         curTime = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 3);
         minDate = curTime.getFullYear() + "-" + dateReg(curTime.getMonth() + 1) + "-" + dateReg(curTime.getDate());
     }
+    */
 
+        curTime = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 3);
+        minDate = curTime.getFullYear() + "-" + dateReg(curTime.getMonth() + 1) + "-" + dateReg(curTime.getDate());
     if (curTime.getMonth() >= 11) {
         maxDate = curTime.getFullYear() + 1 + "-01" + "-" + dateReg(curTime.getDate());
     } else {

@@ -50,12 +50,12 @@
             </div>
             <div class="atz-pr">
                 <div class="basic">
-                    <h3 class="title">{{$product->title}}</h3>
+                    <h3 class="title">{{$product->title}} （{{$product->skus[0]->title}}）</h3>
                     <h5 class="sale-title">如有特殊功能需求请及时联系客服或您的客户经理。</h5>
                     <div class="price">
                         <em>月租金：</em>
                         <span>
-                           {{$product->PriceNum}}
+                            {{$product->skus[0]->type1_price}}
                         </span>
                         <i class="tag" data-id="0">
                             @if($product->type==1)
@@ -228,7 +228,7 @@
                     <div class="total-price" id="waymoney">
                         <span>合计首期租金：</span>
                         <em id="firstmoney">
-                            {{$product->price_num}}
+                            {{$product->skus[0]->type1_price}}
                         </em>
                         (估算，具体请咨询)
                     </div>
