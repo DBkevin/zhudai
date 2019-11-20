@@ -122,7 +122,7 @@
                         <dd>
                              <div class="atz-radio-bar atz-radio-bar-default">
                                 <label class="atz-radio">
-                                    <input checked="checked" data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <input checked="checked" data-id="4528" name="c" pid="185" type="radio" data-price="{{$product->skus[0]->type1_price}}" value="185">
                                     <span>{{$product->skus[0]->type1}}</span>
                                 </label>
                                 <i class="tag tag_1">{{$product->skus[0]->type1category}}</i>
@@ -133,7 +133,7 @@
                             @if ($product->skus[0]->type2)
                                 <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185" data-price="{{$product->skus[0]->type2_price}}" >
                                     <span>{{$product->skus[0]->type2}}</span>
                                 </label>
                                 <i class="tag tag_1">{{$product->skus[0]->type2category}}</i>
@@ -145,7 +145,7 @@
                              @if ($product->skus[0]->type3)
                                 <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type3_price}}">
                                     <span>{{$product->skus[0]->type3}}</span>
                                 </label>
                                 <i class="tag tag_1">{{$product->skus[0]->type3category}}</i>
@@ -157,7 +157,7 @@
                              @if ($product->skus[0]->type4)
                                 <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input  data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <input  data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type4_price}}">
                                     <span>{{$product->skus[0]->type4}}</span>
                                 </label>
                                 <i class="tag tag_1">{{$product->skus[0]->type4category}}</i>
@@ -169,7 +169,7 @@
                              @if ($product->skus[0]->type5)
                                 <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type5_price}}">
                                     <span>{{$product->skus[0]->type5}}</span>
                                 </label>
                                 <i class="tag tag_1">{{$product->skus[0]->type5category}}</i>
