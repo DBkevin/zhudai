@@ -50,7 +50,7 @@
             </div>
             <div class="atz-pr">
                 <div class="basic">
-                    <h3 class="title">{{$product->title}} <span id="skus_title">（{{$product->skus[0]->title}}）</span></h3>
+                    <h3 class="title">{{$product->title}} <span id="skus_title">{{$product->skus[0]->title}}</span></h3>
                     <h5 class="sale-title">如有特殊功能需求请及时联系客服或您的客户经理。</h5>
                     <div class="price">
                         <em>月租金：</em>
