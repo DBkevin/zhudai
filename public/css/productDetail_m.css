@@ -25,7 +25,7 @@
 .atz-product-info .block dl.dl-inline dd .spinner .increase{width: 30px; height: 28px; cursor: pointer; float: left; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-color: #f2f2f2; border:1px solid #dedede; background-position: -1px -121px;}
 .atz-product-info .block dl.dl-inline dd .pledge span{ padding-right: 10px; font-size: 12px; white-space: nowrap;}
 .atz-product-info .block dl.dl-inline dd .pledge span em:before{content: "\FFE5";}
-.atz-product-info .block dl dd .total-price em{font-size: 18px; color: #f50017;}
+.atz-product-info .block dl dd .total-price em{font-size: 18px; color: #8Fc34f;}
 .atz-product-info .block dl dd .total-price em:before{content: "\FFE5"; font-size: 12px;}
 .atz-product-info .atz-radio-bar{width: 100%; margin-bottom: 5px; }
 .atz-product-info .atz-radio-bar .atz-radio{position:relative; width: 100%;}
@@ -37,9 +37,9 @@
 .atz-product-info .atz-radio-bar .atz-radio input[type="radio"]:checked+span{border-color: #8Fc34f;}
 .atz-product-info .atz-radio-bar .atz-radio span{ color: #2d2e31;}
 .atz-product-info .atz-radio-bar .tips{color:#8Fc34f; display: block; line-height: 20px; margin-bottom: 10px;}
-.atz-product-info .atz-radio-bar i.tag{font-size: 13px; position: relative; color: #e95504; vertical-align: middle;border-radius: 3px; white-space: nowrap;}
+.atz-product-info .atz-radio-bar i.tag{font-size: 13px; position: relative; color: #8Fc34f; vertical-align: middle;border-radius: 3px; white-space: nowrap;}
 .atz-product-info .atz-more-bar{padding: 10px 0; width: 100%; float: left; text-align: center;}
-.atz-product-info .atz-more-bar a{color: #e95504;}
+.atz-product-info .atz-more-bar a{color: #8Fc34f;}
 .atz-product-info .atz-radio-bar i.tag div{ display: none; font-size: 12px; position: absolute; left: 80px; top:0; padding: 10px; width: 300px; white-space: pre-wrap; color: #666; z-index: 9; background: #fff; box-shadow: 0 0 10px #ccc; -webkit-box-shadow: 0 0 10px #ccc;}
 section{margin-bottom: 60px;}
 footer{height: 44px;position: fixed;bottom: 0;width: 100%;background: #fff;border-top: 1px solid #eee;z-index: 8888;}
@@ -56,7 +56,7 @@ footer{height: 44px;position: fixed;bottom: 0;width: 100%;background: #fff;borde
 .atz-tabs-wrap[atz-type="horizontally"] .atz-tabs.fixed{position: fixed;}
 .atz-tabs-wrap[atz-type="horizontally"] .atz-tabs.fixed + .atz-panels{padding: 55px 10px 55px 10px !important;padding-bottom: 0 !important;}
 .atz-tabs-wrap[atz-type="horizontally"] .atz-tabs .atz-tab{color:#969696 !important;}
-.atz-tabs-wrap[atz-type="horizontally"] .atz-tabs .atz-tab.active{color: #e95504 !important;}
+.atz-tabs-wrap[atz-type="horizontally"] .atz-tabs .atz-tab.active{color: #8Fc34f !important;}
 .atz-tabs-wrap[atz-type="horizontally"] .context{ width: 100%; }
 .atz-tabs-wrap[atz-type="horizontally"] .context *{max-width: 100%;height: auto !important;}
 .atz-tabs-wrap[atz-type="horizontally"] .atz-panels{padding: 10px 10px 55px 10px !important; height: 100%;}
@@ -113,7 +113,7 @@ label.atz-checkbox-02 input[type="radio"] + span.checked{ border:0; background-p
     content: "\ff1a";
 }
 .title-info>.price-number{
-    color: #e95504;
+    color: #8Fc34f;
     font-size: 18px;
 }
 .title-info>.price-number::before{
@@ -377,8 +377,8 @@ label.atz-checkbox-02 input[type="radio"] + span.checked{ border:0; background-p
 }
 .product .choose-box2 label input:checked + p + dl{
     background-color: #fff;
-    color: #e95504;
-    border: 1px solid #e95504;
+    color: #8Fc34f;
+    border: 1px solid #8Fc34f;
 }
 .product .choose-box2 label>dl>dt{
     width: 25%;
@@ -428,7 +428,7 @@ label.atz-checkbox-02 input[type="radio"] + span.checked{ border:0; background-p
     display: none;
 }
 .rent-text1>em{
-    color: #e95504;
+    color: #8Fc34f;
     margin-left: 10px;
 }
 .rent-text2{

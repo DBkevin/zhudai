@@ -8,7 +8,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <meta name="format-detection" content="telphone=no, email=no"/>
-    <title>@yield('title', 'Weibo App') - 租贷网</title>
+    <title>@yield('title', config("app.name")) </title>
     <link rel="stylesheet" href="/m/css/app.css">
     @yield('styles')
     <script src="/js/app.js"></script>

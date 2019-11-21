@@ -8,18 +8,11 @@
     <div class="atz-banner-swiper">
         <div class="swiper-container swiper-container-horizontal">
             <div class="swiper-wrapper" id="bannerIndex">
-                <a href="/product/1805170003" class="swiper-slide" data-title="ThinkPad X230 "
-                    style="background-image:url('http://oss.aiterent.com/files/2019/09/1567403973317088.jpg'); background-color:'1';"></a>
-                <a href="/product/1805180003" class="swiper-slide" data-title="ThinkPad T430"
-                    style="background-image:url('http://oss.aiterent.com/files/2019/10/1572339119448515.jpg'); background-color:'2';"></a>
-                <a href="/product/1809300003" class="swiper-slide" data-title="ThinkPad T440"
-                    style="background-image:url('http://oss.aiterent.com/files/2019/09/1567404057290497.jpg'); background-color:'3';"></a>
-                <a href="/product/1904300001" class="swiper-slide" data-title="全新 麦本本 金麦6A"
-                    style="background-image:url('http://oss.aiterent.com/files/2019/09/1567404120378589.jpg'); background-color:'4';"></a>
-                <a href="/product/1906140002" class="swiper-slide" data-title="超扬Y2150-036"
-                    style="background-image:url('http://oss.aiterent.com/files/2019/09/1567474037064557.jpg'); background-color:'5';"></a>
-                <a href="/product/1907010001" class="swiper-slide" data-title="ThinkPad T430S 短租"
-                    style="background-image:url('http://oss.aiterent.com/files/2019/09/1567404180186589.jpg'); background-color:'6';"></a>
+                @foreach ($banners as $banner) 
+                <a href="/product/{{$banner->id}}" class="swiper-slide" 
+                    style="background-image:url('/storage/{{$banner->image}}'); background-color:'1';"></a>
+                @endforeach
+              
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -125,7 +118,7 @@
                 @foreach ($category2s as $key=>$items)
                     <div class="floor f{{$key +1}} clear">
                     <div class="floor-title">
-                        <a href="/list/e1">{{$items->catename}}</a>
+                        <a href="/product">{{$items->catename}}</a>
                     </div>
                     <div class="floor-main swiper-container" id="pr_1">
                         <div class="swiper-wrapper">
