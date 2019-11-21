@@ -87,8 +87,8 @@
                 </div>
                 <div class="desc">
                     <p title="{{$product->title}}">{{$product->title}}</p><span>
-                        价格：
-                        <em>{{$product->price}}</em></span>
+                        月租金：
+                        <em style="font-size:22px;">{{$product->skus[0]->type1_price}}</em></span>
                 </div>
             </a>
            @endforeach

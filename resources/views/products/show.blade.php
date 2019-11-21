@@ -13,9 +13,7 @@
                 <div class="thumbnail" id="magnifier">
                     <div class="small-box">
                         <!--商品图片-->
-                        <img id="smallPic"
-                            src="/storage/{{$product->images[0]}}"
-                            alt="{{$product->title}}">
+                        <img id="smallPic" src="/storage/{{$product->images[0]}}" alt="{{$product->title}}">
                         <span class="hover"></span>
                     </div>
                     <div class="thumbnail-box">
@@ -25,20 +23,15 @@
                             <ul class="wrapper" id="picList">
                                 <!--配置小图-->
                                 @foreach ($product->images as $item)
-                                    <li class="item"
-                                    data-src="/storage/{{$item}}"
-                                    data-src2="/storage/{{$item}}">
-                                    <img src="/storage/{{$item}}"
-                                    alt="{{$product->title}}">
+                                <li class="item" data-src="/storage/{{$item}}" data-src2="/storage/{{$item}}">
+                                    <img src="/storage/{{$item}}" alt="{{$product->title}}">
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="big-box">
-                        <img id="bigPic"
-                            src="/storage/{{$product->images[0]}}"
-                            alt="{{$product->title}}">
+                        <img id="bigPic" src="/storage/{{$product->images[0]}}" alt="{{$product->title}}">
                     </div>
                 </div>
                 <div class="service-ft clear" id="plbot">
@@ -50,7 +43,7 @@
             </div>
             <div class="atz-pr">
                 <div class="basic">
-                    <h3 class="title">{{$product->title}} （{{$product->skus[0]->title}}）</h3>
+                    <h3 class="title">{{$product->title}} <span id="skus_title">{{$product->skus[0]->title}}</h3>
                     <h5 class="sale-title">如有特殊功能需求请及时联系客服或您的客户经理。</h5>
                     <div class="price">
                         <em>月租金：</em>
@@ -59,9 +52,9 @@
                         </span>
                         <i class="tag" data-id="0">
                             @if($product->type==1)
-                               全新设备
+                            全新设备
                             @else
-                              非全新设备
+                            非全新设备
                             @endif
                         </i>
                     </div>
@@ -72,25 +65,24 @@
                         <dd class="config-tag">
                             <!--配置属性-->
                             @foreach ($product->skus as $key=>$item)
-                                @if ($key==0)
-                                <label class="atz-radio-01 sku">
-                                <input checked="checked" data-id="{{$item->id}}" ibh="{{$item->id}}"
-                                    name="cf" type="radio">
-                                    <span><img src="/storage/{{$product->images[0]}}" />
-                                       {{$item->title}}
-                                    </span>
-                                </label>
-                                @else
-                                <label class="atz-radio-01 sku">
-                                <input data-id="{{$item->id}}" ibh="{{$item->id}}"
-                                    name="cf" type="radio">
-                                    <span><img src="/storage/{{$product->images[0]}}" />
-                                       {{$item->title}}
-                                    </span>
-                                </label>
-                                @endif
+                            @if ($key==0)
+                            <label class="atz-radio-01 sku">
+                                <input checked="checked" data-id="{{$item->id}}" ibh="{{$item->id}}" name="cf"
+                                    type="radio">
+                                <span><img src="/storage/{{$product->images[0]}}" />
+                                    {{$item->title}}
+                                </span>
+                            </label>
+                            @else
+                            <label class="atz-radio-01 sku">
+                                <input data-id="{{$item->id}}" ibh="{{$item->id}}" name="cf" type="radio">
+                                <span><img src="/storage/{{$product->images[0]}}" />
+                                    {{$item->title}}
+                                </span>
+                            </label>
+                            @endif
                             @endforeach
-                           
+
                         </dd>
                     </dl>
                     <dl id="proservice">
@@ -99,7 +91,7 @@
                         <i id="protect">
                             <label class="atz-checkbox-01">
                                 <input type="checkbox" checked="checked" data-id="10" name="prot">
-                                <span>标准保</span>
+                                <span class="zzserver">标准保</span>
                             </label>
                         </i>
                         </dd>
@@ -120,67 +112,89 @@
                     <dl id="ways">
                         <dt>租赁方式：</dt>
                         <dd>
-                             <div class="atz-radio-bar atz-radio-bar-default">
+                            <div class="atz-radio-bar atz-radio-bar-default">
                                 <label class="atz-radio">
-                                    <input checked="checked" data-id="4528" name="c" pid="185" type="radio" data-price="{{$product->skus[0]->type1_price}}" value="185">
+                                    <input checked="checked" data-id="4528" name="c" pid="185" type="radio"
+                                        data-price="{{$product->skus[0]->type1_price}}" value="185">
                                     <span>{{$product->skus[0]->type1}}</span>
                                 </label>
-                                <i class="tag tag_1">{{$product->skus[0]->type1category}}</i>
+                                <i class="tag tag_1">
+                                    {{$product->skus[0]->type1category}}
+                                    <div></div>
+                                </i>
+                                
                                 <em class="tips">
                                     {{$product->skus[0]->type1_descript}}
                                 </em>
                             </div>
                             @if ($product->skus[0]->type2)
-                                <div class="atz-radio-bar ">
+                            <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185" data-price="{{$product->skus[0]->type2_price}}" >
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
+                                        data-price="{{$product->skus[0]->type2_price}}">
                                     <span>{{$product->skus[0]->type2}}</span>
                                 </label>
-                                <i class="tag tag_1">{{$product->skus[0]->type2category}}</i>
+                                <i class="tag tag_1">
+                                    {{$product->skus[0]->type2category}}
+                                    <div></div>
+                                </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type2_descript}}
                                 </em>
-                                </div>
+                            </div>
                             @endif
-                             @if ($product->skus[0]->type3)
-                                <div class="atz-radio-bar ">
+                            @if ($product->skus[0]->type3)
+                            <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type3_price}}">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
+                                        data-price="{{$product->skus[0]->type3_price}}">
                                     <span>{{$product->skus[0]->type3}}</span>
                                 </label>
-                                <i class="tag tag_1">{{$product->skus[0]->type3category}}</i>
+                                <i class="tag tag_1">
+                                    {{$product->skus[0]->type3category}}
+                                    <div></div>
+                                </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type3_descript}}
                                 </em>
-                                </div>
+                            </div>
                             @endif
-                             @if ($product->skus[0]->type4)
-                                <div class="atz-radio-bar ">
+                            @if ($product->skus[0]->type4)
+                            <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input  data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type4_price}}">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
+                                        data-price="{{$product->skus[0]->type4_price}}">
                                     <span>{{$product->skus[0]->type4}}</span>
                                 </label>
-                                <i class="tag tag_1">{{$product->skus[0]->type4category}}</i>
+                                <i class="tag tag_1">
+                                    {{$product->skus[0]->type4category}}
+                                    <div></div>
+                                </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type4_descript}}
                                 </em>
-                                </div>
+                            </div>
                             @endif
-                             @if ($product->skus[0]->type5)
-                                <div class="atz-radio-bar ">
+                            @if ($product->skus[0]->type5)
+                            <div class="atz-radio-bar ">
                                 <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"  data-price="{{$product->skus[0]->type5_price}}">
+                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
+                                        data-price="{{$product->skus[0]->type5_price}}">
                                     <span>{{$product->skus[0]->type5}}</span>
                                 </label>
-                                <i class="tag tag_1">{{$product->skus[0]->type5category}}</i>
+                                <i class="tag tag_1">
+                                    {{$product->skus[0]->type5category}}
+                                    <div></div>
+                                </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type5_descript}}
                                 </em>
-                                </div>
+                            </div>
                             @endif
-                           
-                            <div class="atz-more-bar"><a href="javascript:void(0);" id="atz-more-bar" >更多租赁方式请联系</a></div>
-                            
+
+                            <div class="atz-more-bar"><a href="javascript:void(0);" id="atz-more-bar">更多租赁方式请联系</a>
+                            </div>
+
                         </dd>
                     </dl>
 
@@ -207,7 +221,7 @@
                             <div class="pledge">
                                 <span>设备押金:
                                     <em id="bhold">
-                                       {{$product->skus[0]->price}}
+                                        {{$product->skus[0]->price}}
                                     </em>
                                 </span>
                                 <span>可免除押金:
@@ -215,7 +229,7 @@
                                 </span>
                                 <span>需支付押金:
                                     <em id="nhold">
-                                       {{$product->skus[0]->price}}
+                                        {{$product->skus[0]->price}}
                                     </em>
                                 </span>
                                 <a class="promote" href="javascript:void(0)">具体额度请咨询</a>
@@ -267,48 +281,52 @@
 </div>
 <!--表单-->
 <div id="add-main" style="display: none;">
-       <form class="layui-form" id="add-form" action="">
-         <div class="layui-form-item center "  style="magrin-top:20px;">
-          <label class="layui-form-label" style="width: 100px" >商品名称</label>
-          <div class="layui-input-block">
-          <input type="text" name="product_name" required value="{{$product->title}}" style="width: 240px" lay-verify="required" placeholder="请输入配置名称" autocomplete="off" class="layui-input">
-          </div>
-         </div>
-         <div class="layui-form-item">
-          <label class="layui-form-label" style="width: 100px">您的姓名</label>
-          <div class="layui-input-block">
-           <input type="text" name="name" required style="width: 240px" lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input">
-          </div>
-         </div>
-         <div class="layui-form-item">
-          <label class="layui-form-label" style="width: 100px">您的电话 </label>
-          <div class="layui-input-block">
-           <input type="text" name="phone" required style="width: 240px" lay-verify="required" placeholder="请输入您的电话" autocomplete="off" class="layui-input">
-          </div>
-         </div>
-         <div class="layui-form-item">
-          <div class="layui-input-block">
-           <a class="layui-btn" id="ljtx" href="javascript:void(0);">立即提交</a>
-           <button type="reset" class="layui-btn layui-btn-primary" id="closeBtn" >重置</button>
-          </div>
-         </div> 
-       </form>  
-    </div>
+    <form class="layui-form" id="add-form" action="">
+        <div class="layui-form-item center " style="magrin-top:20px;">
+            <label class="layui-form-label" style="width: 100px">商品名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="product_name" required value="{{$product->title}}" style="width: 240px"
+                    lay-verify="required" placeholder="请输入配置名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 100px">您的姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required style="width: 240px" lay-verify="required" placeholder="请输入您的姓名"
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 100px">您的电话 </label>
+            <div class="layui-input-block">
+                <input type="text" name="phone" required style="width: 240px" lay-verify="required"
+                    placeholder="请输入您的电话" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <a class="layui-btn" id="ljtx" href="javascript:void(0);">立即提交</a>
+                <button type="reset" class="layui-btn layui-btn-primary" id="closeBtn">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
 @stop
 @section('scripts')
 <script src="{{asset('js/magnifier.js')}}"></script>
 <script src="{{asset('js/laydate.min.js')}}"></script>
 <script src="{{asset('js/product.js')}}"></script>
 <script>
- $('#zixun').on('click', function(){
-    layer.open({
-      type: 1,
-      area: ['600px', '360px'],
-      shadeClose: true, //点击遮罩关闭
-      content: $("#add-main"),
+    console.log('修改的');
+    $('#zixun').on('click', function(){
+        layer.open({
+        type: 1,
+        area: ['600px', '360px'],
+        shadeClose: true, //点击遮罩关闭
+        content: $("#add-main"),
+        });
     });
-  });
-$('#ljtx').on('click',function(){
+    $('#ljtx').on('click',function(){
         var name = $("input[name='name']").val();
         var product_name = $("input[name='product_name']").val();
         var phone = $("input[name='phone']").val();
@@ -319,9 +337,9 @@ $('#ljtx').on('click',function(){
             url: "/msg",
             type: "POST",
             data: {
-               product_name:product_name,
-               name:name,
-               phone:phone,
+                product_name:product_name,
+                name:name,
+                phone:phone,
             },
             success: function(data) {
                 //注册成功
@@ -332,20 +350,189 @@ $('#ljtx').on('click',function(){
             }
         });
     });
-     $( " dd .atz-more-bar").find("a").unbind("click").bind("click",
-        function() {
-            $( ".atz-radio-bar").is(":hidden") ? ($( " .atz-radio-bar").show(), $(this).text("收起")) : ($( " .atz-radio-bar").eq(0).siblings(".atz-radio-bar").hide(), $(" .atz-more-bar>a").text("查看更多租赁方式"))
-        })
-    $('.atz-radio-01 ').on('click', function(){
-    $.ajax({
-        url:'/sku/'+$('.atz-radio-01 input').attr('data-id'),
-        type:'get',
-        success:function(sku){
-            var jsons=JSON.parse(sku);
-            console.dir(jsons);
-            console.log(jsons['price']);
-        }
+    $( " dd .atz-more-bar").find("a").unbind("click").bind("click",
+    function() {
+        $( ".atz-radio-bar").is(":hidden") ? ($( " .atz-radio-bar").show(), $(this).text("收起")) : ($( " .atz-radio-bar").eq(0).siblings(".atz-radio-bar").hide(), $(" .atz-more-bar>a").text("查看更多租赁方式"))
     });
-  });
+
+
+    updata();
+    function updata(){
+        var productTitleType = $('#skus_title'),//标题 √
+            productPrice = $('.basic .price span'),//月租金 √
+            productDeposit=$('#bhold'),//押金 √
+            productStock=$('#istore'),//库存 √
+            productProtect=$('#protect span'),//增值保障
+            addedValue=$('#service span'),//增值服务
+            checkbox=addedValue.siblings('input'),
+            total=$('#firstmoney');//总金额
+
+        var ways=$('#ways dd');//租赁方式 √
+
+        //点击sku提交Ajax申请 并清空租赁方式重新装填
+        var configure = $('.sku span');
+        configure.on('click', function () {
+            var $this=$(this);
+            var configInput = $this.siblings('input');
+            
+            event.stopPropagation();
+            console.log('clicked');
+
+            //更换title
+            var configureText=$this.text();
+            productTitleType.text(configureText);        
+            
+            $.ajax({
+                url: '/sku/' + configInput.data('id'),
+                type: 'get',
+                success: function (sku) {
+                    operationData(sku);
+                },
+                error: function () {
+
+                }
+            });
+        });
+
+        // 将拿到ajax返回的数据格式化
+        function getAjaxSuccessData(sku) {
+            var jsons = JSON.parse(sku);
+            if (jsons === null) {
+                alert('服务器错误');
+                return;
+            }
+            var sku_data = {};
+            for (var k in jsons) {
+                sku_data[k] = jsons[k];
+            }
+            return sku_data;
+        }
+
+        var html='';
+        // 操作数据 //更新租金 √
+        function operationData(data) {
+            var ajaxData = getAjaxSuccessData(data);
+            console.log(ajaxData);
+            
+            productStock.text(ajaxData['stock']);//更新库存
+            productDeposit.text(ajaxData['price']);//更新押金
+
+            //更新租赁方式
+            html='<div class="atz-radio-bar atz-radio-bar-default"><label class="atz-radio"><input checked="checked" data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type1_price']+'"><span>'
+                +ajaxData['type1']+'</span></label><i class="tag tag_1">'+ajaxData['type1category']+'</i><em class="tips">'+ajaxData['type1_descript']+'</em></div>';
+            
+            if(ajaxData['type2']){
+                html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type2_price']+'"><span>'
+                    +ajaxData['type2']+'</span></label><i class="tag tag_1">'+ajaxData['type2category']+'</i><em class="tips">'+ajaxData['type2_descript']+'</em></div>';
+                if(ajaxData['type3']){
+                    html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type3_price']+'"><span>'
+                        +ajaxData['type3']+'</span></label><i class="tag tag_1">'+ajaxData['type3category']+'</i><em class="tips">'+ajaxData['type3_descript']+'</em></div>';
+
+                        if(ajaxData['type4']){
+                            html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type4_price']+'"><span>'
+                                +ajaxData['type4']+'</span></label><i class="tag tag_1">'+ajaxData['type4category']+'</i><em class="tips">'+ajaxData['type4_descript']+'</em></div>';
+                                if(ajaxData['type5']){
+                                    html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type5_price']+'"><span>'
+                                        +ajaxData['type5']+'</span></label><i class="tag tag_1">'+ajaxData['type5category']+'</i><em class="tips">'+ajaxData['type5_descript']+'</em></div>';
+                                }
+                        }
+                }
+            }
+            ways.empty().html(html);
+
+            //更新租金
+            var defautOptionPrice=$('.atz-radio-bar-default input').data('price');
+
+            productPrice.text(defautOptionPrice);
+            total.text(defautOptionPrice);
+             
+            productPrice.text(defautOptionPrice);
+            if( !addedValue.hasClass('zzserver') || !productProtect.hasClass('zzserver') ){
+                total.text(defautOptionPrice);
+            }else{
+                // productPrice.text(parseFloat(defautOptionPrice)+10);
+                total.text(parseFloat(defautOptionPrice)+10);
+            }
+            
+            
+        }
+
+        changePrice();
+        //点击租赁方式 更新价格 √
+        function changePrice(){
+            // var ajaxData = getAjaxSuccessData(data);
+            $('#ways .atz-radio-bar span').on('click',function(){
+
+                var $this=$(this);
+                var price=$this.siblings('input').data('price');
+                // var index=$this.parents('.atz-radio-bar').index()+1;
+                // var thisPrice=ajaxData['type'+index+'_price'];
+
+                productPrice.text(price);
+                if( !addedValue.hasClass('zzserver') || !productProtect.hasClass('zzserver') ){
+                    total.text(price);
+                }else{
+                    total.text(parseFloat(price)+10);
+                }
+            });
+        }
+
+        //点击增值 更新价格 √
+        addedValue.on('click',function(){
+            addValue($(this));
+        });
+        productProtect.on('click',function(){
+            if(!$(this).hasClass('zzserver')){
+                $(this).addClass('zzserver');
+            }else{
+                $(this).removeClass('zzserver');
+            }
+        });
+        function addValue($ele){
+            console.log('in');
+            // var $this=$ele;
+            if( !$ele.hasClass('zzserver') ){
+                addedValue.addClass('zzserver');
+
+                total.text(parseFloat(productPrice.text())+10);
+            }else{
+                addedValue.removeClass('zzserver');
+                total.text(parseFloat(total.text())-10);
+                console.log('无增值'+total.text());
+            }
+        }
+        
+    }
+
+    var rules={
+        '组合租赁':'1.前部分租期为固定租期，一般为12个月或24个月。若在固定租期内提前退还，则艾特租将收取固定租期内未交纳租金的70%作为违约金，同时客户需承担退机运费。<br>2.超过固定租期后可随时退还，承租方无需承担额外费用（退机运费由艾特租承担）。<br>3.租期结束且不再续租时，设备需退还给艾特租。<br>4.由于退机运输造成的的设备损坏，由客户和承运方承担损失。',
+        '固定租期':'1.若提前退还设备，艾特租将收取未交纳租金的70%作为违约金，同时客户需承担退机运费。<br>2.租期结束且不再续租时，设备需退还给艾特租，由艾特租承担退机运费。<br>3.由于退机运输造成的的设备损坏，由客户和承运方承担损失。',
+        '租完即送':'1.租期结束后，设备归客户所有。<br>2.不可将设备退还给艾特租，客户必须交齐全部租金',
+        '随租随还':'1.6个月后可随时退还，承租方无需承担额外租金违约费用；但若租期未满12个月，客户需承担退机运费。<br>2.若6个月内退还（即实际租期不足6个月）：当实际租期N不足3个月时，艾特租将收取额外3个月租金作为随租随还服务费；当实际租期N已满3个月且不足6个月时，艾特租将收取额外（6-N）个月的租金作为随租随还服务费（即加上服务费共收取6个月的租金），同时客户需承担退机运费。<br>3.租期结束且不再续租时，设备需退还给艾特租。<br>4.由于退机运输造成的设备损坏，由客户和承运方承担损失'
+    };
+    $('.tag').each(function(){
+        var $this=$(this);
+        $this.hover(function(){
+            for( var k in rules ){
+                if( $.trim( $this.text() )===k ){
+                    $('div',$this).html(rules[k]);
+                    $('div',$this).show();
+                    // $('.tag div').css('visibility','visible');
+                }
+            }
+        })
+    });
+    // $('.atz-radio-01 ').on('click', function(){
+    // $.ajax({
+    //     url:'/sku/'+$('.atz-radio-01 input').attr('data-id'),
+    //     type:'get',
+    //     success:function(sku){
+    //         var jsons=JSON.parse(sku);
+    //         console.dir(jsons);
+    //         console.log(jsons['price']);
+    //         console.log('111');
+    //     }
+    // });
+    //});
 </script>
 @endsection

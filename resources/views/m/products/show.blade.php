@@ -5,7 +5,7 @@
 @stop
 @section('content')
 <header id="header_gjprXFZK" atz-skin="primary" atz-pos="fixed">
-    <a href="/" class="atz-back-button" ></a>
+    <a href="/" class="atz-back-button"></a>
     <span class="atz-header-title">商品详情</span>
 </header>
 <div class="atz-section product" block="true">
@@ -72,7 +72,7 @@
                                     </p>
                                 </div>
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAHCAYAAAAf6f3xAAAAg0lEQVQoka3SOw4CIRQF0CNxK1auhN6YWc3Ez2pGe1iKhUuxsRgLTHgFydyGcDkh5IVdKQXOmHHAGzc8IOcMaq2ahL6Trt3jhKWBx2bfu2zEhzbhErx0DvoRH9pkHUEvW/ShTda597JFH9qEa3B4D/oRH9qEJya88Pmtk/9P0WbEh/YLz/cvBnnLvD4AAAAASUVORK5CYII="
-                                    class="dots" id="">
+                                    class="dots" id="rentLook">
                             </div>
                         </div>
 
@@ -194,6 +194,109 @@
                                 </div>
                             </div>
                         </div>
+                        <!--租赁方式modal-->
+                        <div class="choose-module" id="rentBox">
+                            <div class="choose-module-container animated2 fadeOutUp">
+                                <div class="close-configuration">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOxJREFUeNqc078OgjAQBvB6IbiYuLu7sDu4uTuJm5vvoRETZnwEo4P6Gu59Iie/S46ENPTfNfmglPIL0Ouk67qlMaZBjsjP6FuJ3NkqcLghW2SKHJQwg2+kRuaEg5Ube+QlE7QgN0vy6Vcl7ILsNCQXGngU5A4NJuXAXtBFU+EgOIbG4CjoQ33wLAXkVgQWon/gIvAaWcTA0JsO4Vb6PdiGwBSU/2HljFWxcqOMOvzKuZbxMhcdW+XNYPGCMGUWdpMCU25hp8CUCSbBpACjMEnnkwkGYUafyE4B+uAHb9OT7GurAN0tvULOfwEGAC0YSe6J3TjUAAAAAElFTkSuQmCC"
+                                        alt="">
+                                </div>
+                                <div class="repay-title">租赁方式</div>
+                                <div id="outer-rent" class="choose-container">
+                                    <div id="inner-rent">
+                                        <div class="choose-box2" id="ways">
+                                             <div class="item-box">
+                                                <label>
+                                                    <input checked="checked" data-price="{{$product->skus[0]->type1_price}}" type="radio"  >
+                                                    <p>
+                                                        {{$product->skus[0]->type1}}
+                                                      <em class="color-default">{{$product->skus[0]->type1_category}}</em>
+                                                    </p>
+                                                    <dl class="clear">
+                                                        <dt>：{{$product->skus[0]->type1_category}}</dt>
+                                                        <dd>
+                                                            {{$product->skus[0]->type1descript}}
+                                                        </dd>
+                                                    </dl>
+                                                </label>
+                                            </div>
+                                            @if ($product->skus[0]->type2)
+                                             <div class="item-box">
+                                                <label>
+                                                    <input checked="checked" data-price="{{$product->skus[0]->type2_price}}"
+                                                        type="radio"  >
+                                                    <p>
+                                                        {{$product->skus[0]->type2}}
+                                                      <em class="color-default">{{$product->skus[0]->type2_category}}</em>
+                                                    </p>
+                                                    <dl class="clear">
+                                                        <dt>：{{$product->skus[0]->type2_category}}</dt>
+                                                        <dd>
+                                                            {{$product->skus[0]->type2descript}}
+                                                        </dd>
+                                                    </dl>
+                                                </label>
+                                            </div>
+                                            @endif
+                                            @if ($product->skus[0]->type3)
+                                             <div class="item-box">
+                                                <label>
+                                                    <input checked="checked" data-price="{{$product->skus[0]->type3_price}}"
+                                                        type="radio"  >
+                                                    <p>
+                                                        {{$product->skus[0]->type3}}
+                                                      <em class="color-default">{{$product->skus[0]->type3_category}}</em>
+                                                    </p>
+                                                    <dl class="clear">
+                                                        <dt>：{{$product->skus[0]->type3_category}}</dt>
+                                                        <dd>
+                                                            {{$product->skus[0]->type3descript}}
+                                                        </dd>
+                                                    </dl>
+                                                </label>
+                                            </div>
+                                            @endif
+                                            @if ($product->skus[0]->type4)
+                                             <div class="item-box">
+                                                <label>
+                                                    <input checked="checked" data-price="{{$product->skus[0]->type4_price}}"
+                                                        type="radio"  >
+                                                    <p>
+                                                        {{$product->skus[0]->type4}}
+                                                      <em class="color-default">{{$product->skus[0]->type4_category}}</em>
+                                                    </p>
+                                                    <dl class="clear">
+                                                        <dt>：{{$product->skus[0]->type4_category}}</dt>
+                                                        <dd>
+                                                            {{$product->skus[0]->type4descript}}
+                                                        </dd>
+                                                    </dl>
+                                                </label>
+                                            </div>
+                                            @endif
+                                            @if ($product->skus[0]->type5)
+                                             <div class="item-box">
+                                                <label>
+                                                    <input checked="checked"  data-price="{{$product->skus[0]->type5_price}}" type="radio"  >
+                                                    <p>
+                                                        {{$product->skus[0]->type5}}
+                                                      <em class="color-default">{{$product->skus[0]->type_category}}</em>
+                                                    </p>
+                                                    <dl class="clear">
+                                                        <dt>：{{$product->skus[0]->type5_category}}</dt>
+                                                        <dd>
+                                                            {{$product->skus[0]->type5descript}}
+                                                        </dd>
+                                                    </dl>
+                                                </label>
+                                            </div>
+                                            @endif
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,6 +341,7 @@
             </div>
         </div>
     </div>
+
 </div>
 <!--表单-->
 <div class="choose-module" id="ljzx">
@@ -262,14 +366,17 @@
                         <input type="text" name="phone" value="">
                     </li>
                 </ul>
-                    <button class="ljtj" id="ljtj" style="width:50%;height:30px;background:#ea5504;color:#fff; margin:0 auto; display:block ; ">
-                        立即提交
-                    </button>
+                <button class="ljtj" id="ljtj"
+                    style="width:50%;height:30px;background:#ea5504;color:#fff; margin:0 auto; display:block ; ">
+                    立即提交
+                </button>
             </div>
         </div>
 
     </div>
 </div>
+
+
 <!--页尾 begin -->
 <footer>
     <div class="total">
@@ -383,8 +490,18 @@
         return date;
     }
 }
- 
-
+   $("#rentLook").unbind("click").bind("click", function () {
+        $("body").addClass("overHide");
+        $("#rentBox").show();
+        $("#rentBox>.choose-module-container").addClass("fadeInUp").removeClass("fadeOutDown");
+    });
+       $("#rentBox .close-configuration").unbind("click").bind("click", function () {
+        $("body").removeClass("overHide");
+        $("#rentBox>.choose-module-container").addClass("fadeOutDown").removeClass("fadeInUp");
+        setTimeout(function () {
+            $("#rentBox").hide();
+        }, 400)
+    });
 navFixed();
 setrentTime() ;
 </script>

@@ -150,8 +150,9 @@ label.atz-checkbox input[type="radio"] + span.checked{background-position: -17px
 label.atz-checkbox-01 {position: relative; background: #FCFCFC; margin-right: 10px; display: inline-block; margin-bottom: 10px;}
 label.atz-checkbox-01 input[type="checkbox"]{opacity: 0; filter:alpha(opacity=0); width: 0; height: 0;}
 label.atz-checkbox-01 span{cursor: pointer; color:#2d2e31; display: inline-block; border: 1px solid #eee; padding: 3px 15px 3px 10px; position: relative; white-space: nowrap;}
-label.atz-checkbox-01 input[type="checkbox"]:checked + span{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
+/*label.atz-checkbox-01 input[type="checkbox"]:checked + span{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
 label.atz-checkbox-01 input[type="checkbox"] + span.checked{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
+*/
 
 label.atz-checkbox-01 input[type="radio"]{opacity: 0; filter:alpha(opacity=0); width: 0; height: 0;}
 label.atz-checkbox-01 input[type="radio"]:checked + span{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
@@ -163,6 +164,7 @@ label.atz-checkbox-01 input[type="radio"] + span.checked{background: url("../ima
 .atz-checkbox-01-hover-select label.atz-checkbox-01 span{cursor: pointer;color:#2d2e31; border:0; background-image: url("../images/form.png") !important;  background-position: -17px -65px; background-repeat: no-repeat; vertical-align: middle; padding: 0 0 0 25px ;height: 18px; position: relative; white-space: nowrap; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
 .atz-checkbox-01-hover-select label.atz-checkbox-01 input[type="checkbox"]:checked + span{ border:0;  background-position: -17px -15px;}
 .atz-checkbox-01-hover-select label.atz-checkbox-01 input[type="checkbox"] + span.checked{ border:0; background-position: -17px -15px;}
+
 
 label.atz-checkbox-02 span{cursor: pointer;color:#2d2e31;border:0;background-image: url("../images/form.png") !important;background-position: -17px -65px;background-repeat: no-repeat;vertical-align: middle;padding: 0 0 0 25px;height: 18px;position: relative;white-space: nowrap;-webkit-user-select: none;-ms-user-select: none;user-select: none;width: 0;margin: 0;float: none;display: inline-block;top: -2px;}
 label.atz-checkbox-02 input[type="checkbox"]:checked + span{ border:0;  background-position: -17px -15px;}
@@ -183,6 +185,10 @@ label.atz-radio-01 input[type="radio"]{opacity: 0; filter:alpha(opacity=0); widt
 label.atz-radio-01 span{cursor: pointer;color:#2d2e31; display: inline-block; padding: 3px 15px 3px 5px;position: relative;white-space: nowrap; border: 1px solid #eee;}
 label.atz-radio-01 input[type="radio"]:checked + span{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
 label.atz-radio-01 input[type="radio"] + span.checked{background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f;}
+
+.zzserver{
+background: url("../images/atz-checked.png") right bottom no-repeat; border: 1px solid #8Fc34f !important;
+}
 
 label.atz-radio-02 input[type="radio"]{opacity: 0; filter:alpha(opacity=0); width: 0; height: 0;}
 label.atz-radio-02 input[type="radio"] + span{cursor: pointer;color:#2d2e31;background-image: url("../images/form.png");background-position: -17px -217px;background-repeat: no-repeat;vertical-align: middle;padding: 0 0 0 25px;height: 18px;display: inline-block;position: relative;white-space: nowrap;-webkit-user-select: none;-ms-user-select: none;user-select: none;}
