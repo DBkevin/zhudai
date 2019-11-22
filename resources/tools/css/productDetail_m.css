@@ -292,6 +292,12 @@ label.atz-checkbox-02 input[type="radio"] + span.checked{ border:0; background-p
     color: #8Fc34f;
     background: #fff;
 }
+
+.zzserver{
+    border-color:#8Fc34f !important;
+    color: #8Fc34f !important;
+    background: #fff !important;
+}
 .product .choose-module .choose-container .row{
     padding: 10px 15px;
     min-height: 30px;

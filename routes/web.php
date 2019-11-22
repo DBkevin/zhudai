@@ -12,7 +12,7 @@
 */
 
 //子域名设置为m.laravel.com 命名空间为 Admin
-Route::group(['domain' => "m.zhudai.test"],function (){
+Route::group(['domain' => "m.huiqushi.cn"],function (){
     Route::get('/','MindexController@index');
     Route::get('/product','MProductsController@index');
     Route::get('/product/{product}','MProductsController@show');

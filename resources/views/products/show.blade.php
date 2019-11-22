@@ -43,10 +43,9 @@
             </div>
             <div class="atz-pr">
                 <div class="basic">
-<<<<<<< HEAD
-=======
-                    <h3 class="title">{{$product->title}} <span id="skus_title">{{$product->skus[0]->title}}</h3>
->>>>>>> 3a57ca5d34e7b83cdbbeaf771f547212912770d7
+
+                    <h3 class="title">{{$product->title}} (<span id="skus_title">{{$product->skus[0]->title}}</span>)
+                    </h3>
                     <h5 class="sale-title">如有特殊功能需求请及时联系客服或您的客户经理。</h5>
                     <div class="price">
                         <em>月租金：</em>
@@ -123,9 +122,8 @@
                                 </label>
                                 <i class="tag tag_1">
                                     {{$product->skus[0]->type1category}}
-                                    <div></div>
+                                    <div>{{$product->skus[0]->type1_category_info}}</div>
                                 </i>
-                                
                                 <em class="tips">
                                     {{$product->skus[0]->type1_descript}}
                                 </em>
@@ -139,7 +137,7 @@
                                 </label>
                                 <i class="tag tag_1">
                                     {{$product->skus[0]->type2category}}
-                                    <div></div>
+                                    <div>{{$product->skus[0]->type2_category_info}}</div>
                                 </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type2_descript}}
@@ -155,46 +153,13 @@
                                 </label>
                                 <i class="tag tag_1">
                                     {{$product->skus[0]->type3category}}
-                                    <div></div>
+                                    <div>{{$product->skus[0]->type3_category_info}}</div>
                                 </i>
                                 <em class="tips">
                                     {{$product->skus[0]->type3_descript}}
                                 </em>
                             </div>
                             @endif
-                            @if ($product->skus[0]->type4)
-                            <div class="atz-radio-bar ">
-                                <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
-                                        data-price="{{$product->skus[0]->type4_price}}">
-                                    <span>{{$product->skus[0]->type4}}</span>
-                                </label>
-                                <i class="tag tag_1">
-                                    {{$product->skus[0]->type4category}}
-                                    <div></div>
-                                </i>
-                                <em class="tips">
-                                    {{$product->skus[0]->type4_descript}}
-                                </em>
-                            </div>
-                            @endif
-                            @if ($product->skus[0]->type5)
-                            <div class="atz-radio-bar ">
-                                <label class="atz-radio">
-                                    <input data-id="4528" name="c" pid="185" type="radio" value="185"
-                                        data-price="{{$product->skus[0]->type5_price}}">
-                                    <span>{{$product->skus[0]->type5}}</span>
-                                </label>
-                                <i class="tag tag_1">
-                                    {{$product->skus[0]->type5category}}
-                                    <div></div>
-                                </i>
-                                <em class="tips">
-                                    {{$product->skus[0]->type5_descript}}
-                                </em>
-                            </div>
-                            @endif
-
                             <div class="atz-more-bar"><a href="javascript:void(0);" id="atz-more-bar">更多租赁方式请联系</a>
                             </div>
 
@@ -422,15 +387,15 @@
 
             //更新租赁方式
             html='<div class="atz-radio-bar atz-radio-bar-default"><label class="atz-radio"><input checked="checked" data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type1_price']+'"><span>'
-                +ajaxData['type1']+'</span></label><i class="tag tag_1">'+ajaxData['type1category']+'</i><em class="tips">'+ajaxData['type1_descript']+'</em></div>';
+                +ajaxData['type1']+'</span></label><i class="tag tag_1">'+ajaxData['type1category']+'<div>'+ajaxData['type1_category_info']+'</div></i><em class="tips">'+ajaxData['type1_descript']+'</em></div>';
             
             if(ajaxData['type2']){
                 html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type2_price']+'"><span>'
-                    +ajaxData['type2']+'</span></label><i class="tag tag_1">'+ajaxData['type2category']+'</i><em class="tips">'+ajaxData['type2_descript']+'</em></div>';
+                    +ajaxData['type2']+'</span></label><i class="tag tag_1">'+ajaxData['type2category']+'<div>'+ajaxData['type1_category_info']+'</div></i><em class="tips">'+ajaxData['type2_descript']+'</em></div>';
                 if(ajaxData['type3']){
                     html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type3_price']+'"><span>'
-                        +ajaxData['type3']+'</span></label><i class="tag tag_1">'+ajaxData['type3category']+'</i><em class="tips">'+ajaxData['type3_descript']+'</em></div>';
-
+                        +ajaxData['type3']+'</span></label><i class="tag tag_1">'+ajaxData['type3category']+'<div>'+ajaxData['type1_category_info']+'</div></i><em class="tips">'+ajaxData['type3_descript']+'</em></div>';
+                        /*
                         if(ajaxData['type4']){
                             html+='<div class="atz-radio-bar"><label class="atz-radio"><input data-id="4528" name="c" pid="185" type="radio"value="185" data-price="'+ajaxData['type4_price']+'"><span>'
                                 +ajaxData['type4']+'</span></label><i class="tag tag_1">'+ajaxData['type4category']+'</i><em class="tips">'+ajaxData['type4_descript']+'</em></div>';
@@ -439,6 +404,7 @@
                                         +ajaxData['type5']+'</span></label><i class="tag tag_1">'+ajaxData['type5category']+'</i><em class="tips">'+ajaxData['type5_descript']+'</em></div>';
                                 }
                         }
+                        */
                 }
             }
             ways.empty().html(html);
@@ -506,16 +472,26 @@
         }
         
     }
-
+    /*
     var rules={
         '组合租赁':'1.前部分租期为固定租期，一般为12个月或24个月。若在固定租期内提前退还，则艾特租将收取固定租期内未交纳租金的70%作为违约金，同时客户需承担退机运费。<br>2.超过固定租期后可随时退还，承租方无需承担额外费用（退机运费由艾特租承担）。<br>3.租期结束且不再续租时，设备需退还给艾特租。<br>4.由于退机运输造成的的设备损坏，由客户和承运方承担损失。',
         '固定租期':'1.若提前退还设备，艾特租将收取未交纳租金的70%作为违约金，同时客户需承担退机运费。<br>2.租期结束且不再续租时，设备需退还给艾特租，由艾特租承担退机运费。<br>3.由于退机运输造成的的设备损坏，由客户和承运方承担损失。',
         '租完即送':'1.租期结束后，设备归客户所有。<br>2.不可将设备退还给艾特租，客户必须交齐全部租金',
         '随租随还':'1.6个月后可随时退还，承租方无需承担额外租金违约费用；但若租期未满12个月，客户需承担退机运费。<br>2.若6个月内退还（即实际租期不足6个月）：当实际租期N不足3个月时，艾特租将收取额外3个月租金作为随租随还服务费；当实际租期N已满3个月且不足6个月时，艾特租将收取额外（6-N）个月的租金作为随租随还服务费（即加上服务费共收取6个月的租金），同时客户需承担退机运费。<br>3.租期结束且不再续租时，设备需退还给艾特租。<br>4.由于退机运输造成的设备损坏，由客户和承运方承担损失'
     };
-    $('.tag').each(function(){
+    */
+    $('.tag').hover(function(){
+        var $this=$(this);
+        $('div',$this).show();
+    },function(){
+        var $this=$(this);
+        $('div',$this).hide();
+    });
+    
+    /*$('.tag').each(function(){
         var $this=$(this);
         $this.hover(function(){
+            $('div',$this).show();
             for( var k in rules ){
                 if( $.trim( $this.text() )===k ){
                     $('div',$this).html(rules[k]);
@@ -525,6 +501,7 @@
             }
         })
     });
+    */
     // $('.atz-radio-01 ').on('click', function(){
     // $.ajax({
     //     url:'/sku/'+$('.atz-radio-01 input').attr('data-id'),

@@ -37,8 +37,8 @@
         </div>
         <div class="atz-qrcode"> <img src="/images/wc_qrcode.jpg" style="max-width: 160px;"> <span>扫一扫 </span> <span>关注惠趣租官方微信号</span> <span>免费领取优惠券</span> </div>
         <div class="atz-aftersale"> <em class="aftersale-icon"></em>
-            <h3>400-038-1230</h3>
+            <h3>{{config('app.tel')}}</h3>
             <h4>客服电话(周一至周日9:00-18:00)</h4> </div>
-        <div class="atz-copyright"> <span>©Copyright Reserved 2018</span><em>|</em> <span>备案号:沪xxxx号</span><em>|</em> <span>公安网备:31010502003019号</span><em>|</em> <span>上海魁马科技有限公司</span> </div><span style="display:none;">艾特租主要提供<strong>笔记本租用</strong>、<strong>电脑租赁</strong>和IT设备租赁等专业<strong>租电脑</strong>服务！</span> </div>
+        <div class="atz-copyright"> <span>©Copyright Reserved 2018</span><em>|</em> <span>备案号:{{config('app.icp')}}</span><em>|</em><em>|</em> <span>{{config('app.corname')}}</span> </div><span style="display:none;">{{config('app.name')}}主要提供<strong>笔记本租用</strong>、<strong>电脑租赁</strong>和IT设备租赁等专业<strong>租电脑</strong>服务！</span> </div>
 </div>
 <!--底部结束-->

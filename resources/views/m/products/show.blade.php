@@ -65,9 +65,10 @@
                                 <div class="show-label">租赁方式</div>
                                 <div class="show-content" id="curRent">
                                     <p class="rent-text1">
-                                       {{$product->skus[0]->type1}}
-                                            <em>{{$product->skus[0]->type1_descript}}</em>
-                                        </p>
+                                        {{$product->skus[0]->type1}}
+                                        <em>{{$product->skus[0]->type1category}}</em>
+                                        {{$product->skus[0]->type1_descript}}
+                                    </p>
                                     <p class="rent-text2">
                                         平均月租金：{{$product->skus[0]->type1_price}}元
                                     </p>
@@ -111,7 +112,7 @@
                                     <div class="total-price" id="waymoney">
                                         <span>合计首期租金：</span>
                                         <em id="firstmoney">
-                                            {{$product->price_num}}
+                                            {{$product->skus[0]->type1_price}}
                                         </em>
                                     </div>
                                 </dd>
@@ -128,7 +129,8 @@
                                     <img src="/storage/{{$product->images[0]}}" alt="">
                                     <div class="choose-product-right">
                                         <div class="price">
-                                            <span class="price-number"> {{$product->price_num}}</span>
+                                            <span class="price-number"> {{$product->skus[0]->type1_price}}</span>
+                                            <!--每选中sku的助贷方式，更新这个值-->
                                         </div>
                                         <div class="choosed-text">
                                             已选： <span class="product-ibreif">{{$product->skus[0]->title}}</span> <span
@@ -145,11 +147,17 @@
                                         <div class="choose-box">
                                             <div class="label">选择商品：</div>
                                             <div class="item-box" id="config">
-                                                @foreach ($product->skus as $item)
-                                                <label><input checked="checked"
-                                                        data-id="4e56d408d6f44493ad2d003ac332bc3c" ibh="0201808220001"
-                                                        name="cf" type="radio"><span>{{$item->title}}</span></label>
+
+                                                @foreach ($product->skus as $k=>$item)
+                                                @if ($k==0)
+                                                <label><input checked="checked" data-id="{{$item->id}}" name="cf"
+                                                        type="radio"><span class="">{{$item->title}}</span></label>
+                                                @else
+                                                <label><input data-id="{{$item->id}}" name="cf"
+                                                        type="radio"><span>{{$item->title}}</span></label>
+                                                @endif
                                                 @endforeach
+
                                             </div>
                                         </div>
                                         <div class="border-box">
@@ -175,7 +183,7 @@
                                                     <label class="atz-checkbox-01">
                                                         <input type="checkbox" data-id="10" data-price="0" name="prot"
                                                             checked>
-                                                        <span>标准保（免费）</span>
+                                                        <span class="zzserver">标准保（免费）</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -206,12 +214,14 @@
                                 <div id="outer-rent" class="choose-container">
                                     <div id="inner-rent">
                                         <div class="choose-box2" id="ways">
-                                             <div class="item-box">
+                                            <div class="item-box">
                                                 <label>
-                                                    <input checked="checked" data-price="{{$product->skus[0]->type1_price}}" type="radio"  >
+                                                    <input checked="checked"
+                                                        data-price="{{$product->skus[0]->type1_price}}" type="radio">
                                                     <p>
                                                         {{$product->skus[0]->type1}}
-                                                      <em class="color-default">{{$product->skus[0]->type1category}}</em>
+                                                        <em
+                                                            class="color-default">{{$product->skus[0]->type1category}}</em>
                                                     </p>
                                                     <dl class="clear">
                                                         <dt>{{$product->skus[0]->type1category}}:</dt>
@@ -222,13 +232,13 @@
                                                 </label>
                                             </div>
                                             @if ($product->skus[0]->type2)
-                                             <div class="item-box">
+                                            <div class="item-box">
                                                 <label>
-                                                    <input checked="checked" data-price="{{$product->skus[0]->type2_price}}"
-                                                        type="radio"  >
+                                                    <input data-price="{{$product->skus[0]->type2_price}}" type="radio">
                                                     <p>
                                                         {{$product->skus[0]->type2}}
-                                                      <em class="color-default">{{$product->skus[0]->type2category}}</em>
+                                                        <em
+                                                            class="color-default">{{$product->skus[0]->type2category}}</em>
                                                     </p>
                                                     <dl class="clear">
                                                         <dt>{{$product->skus[0]->type2category}}:</dt>
@@ -240,13 +250,13 @@
                                             </div>
                                             @endif
                                             @if ($product->skus[0]->type3)
-                                             <div class="item-box">
+                                            <div class="item-box">
                                                 <label>
-                                                    <input checked="checked" data-price="{{$product->skus[0]->type3_price}}"
-                                                        type="radio"  >
+                                                    <input data-price="{{$product->skus[0]->type3_price}}" type="radio">
                                                     <p>
                                                         {{$product->skus[0]->type3}}
-                                                      <em class="color-default">{{$product->skus[0]->type3_category}}</em>
+                                                        <em
+                                                            class="color-default">{{$product->skus[0]->type3category}}</em>
                                                     </p>
                                                     <dl class="clear">
                                                         <dt>{{$product->skus[0]->type3category}}:</dt>
@@ -258,13 +268,13 @@
                                             </div>
                                             @endif
                                             @if ($product->skus[0]->type4)
-                                             <div class="item-box">
+                                            <div class="item-box">
                                                 <label>
-                                                    <input checked="checked" data-price="{{$product->skus[0]->type4_price}}"
-                                                        type="radio"  >
+                                                    <input data-price="{{$product->skus[0]->type4_price}}" type="radio">
                                                     <p>
                                                         {{$product->skus[0]->type4}}
-                                                      <em class="color-default">{{$product->skus[0]->type4category}}</em>
+                                                        <em
+                                                            class="color-default">{{$product->skus[0]->type4category}}</em>
                                                     </p>
                                                     <dl class="clear">
                                                         <dt>{{$product->skus[0]->type4category}}:</dt>
@@ -276,12 +286,13 @@
                                             </div>
                                             @endif
                                             @if ($product->skus[0]->type5)
-                                             <div class="item-box">
+                                            <div class="item-box">
                                                 <label>
-                                                    <input checked="checked"  data-price="{{$product->skus[0]->type5_price}}" type="radio"  >
+                                                    <input data-price="{{$product->skus[0]->type5_price}}" type="radio">
                                                     <p>
                                                         {{$product->skus[0]->type5}}
-                                                      <em class="color-default">{{$product->skus[0]->typecategory}}</em>
+                                                        <em
+                                                            class="color-default">{{$product->skus[0]->type5category}}</em>
                                                     </p>
                                                     <dl class="clear">
                                                         <dt>{{$product->skus[0]->type5category}}:</dt>
@@ -292,7 +303,7 @@
                                                 </label>
                                             </div>
                                             @endif
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -505,5 +516,145 @@
     });
 navFixed();
 setrentTime() ;
+
+
+// 
+    fn();
+    function fn(){
+        var product=$('#config span');//产品
+
+        product.on('click',function(){
+            var $this=$(this),
+                input=$this.siblings('input');
+            
+            if(input.is(':checked')){
+                return;
+            }
+
+            $('#config input').removeAttr('type checked');
+            input.attr({
+                'type':'radio',
+                'checked':true
+            });
+
+            //更新已选商品 点击页面
+            $('.choosed-text .product-ibreif').text($(this).text());
+            //主页面
+            $('.show-content .text').html($('.choosed-text').html().slice($('.choosed-text').html().indexOf('<')));
+
+            $.ajax({
+                url: '/sku/' + input.data('id'),
+                type: 'get',
+                success: function (data) {
+                    upDataMode(data);
+                },
+                error: function () {
+
+                }
+            });
+        });
+
+        // 将拿到ajax返回的数据格式化
+        function getAjaxSuccessData(sku) {
+            var jsons = JSON.parse(sku);
+            if (jsons === null) {
+                alert('服务器错误');
+                return;
+            }
+            var sku_data = {};
+            for (var k in jsons) {
+                sku_data[k] = jsons[k];
+            }
+            return sku_data;
+        }
+        function upDataMode(data){
+            var ajaxData=getAjaxSuccessData(data);
+            console.log(ajaxData);
+            var html;
+            html='<div class="item-box"><label><input checked="checked" data-price="'+ajaxData['type1_price']+'" type="radio"><p>'+ ajaxData['type1'] +'<em class="color-default">'+ ajaxData['type1category'] +'</em> </p><dl class="clear"><dt>'+ ajaxData['type1category'] +':</dt><dd>'+ ajaxData['type1_descript'] +'</dd></dl></label></div>';
+            if(ajaxData['type2']){
+                html+='<div class="item-box"><label><input data-price="'+ajaxData['type2_price']+'" type="radio"><p>'+ ajaxData['type2'] +'<em class="color-default">'+ ajaxData['type2category'] +'</em> </p><dl class="clear"><dt>'+ ajaxData['type2category'] +':</dt><dd>'+ ajaxData['type2_descript'] +'</dd></dl></label></div>';
+                if(ajaxData['type3']){
+                    html+='<div class="item-box"><label><input data-price="'+ajaxData['type3_price']+'" type="radio"><p>'+ ajaxData['type3'] +'<em class="color-default">'+ ajaxData['type3category'] +'</em> </p><dl class="clear"><dt>'+ ajaxData['type3category'] +':</dt><dd>'+ ajaxData['type3_descript'] +'</dd></dl></label></div>';
+                    if(ajaxData['type4']){
+                        html+='<div class="item-box"><label><input data-price="'+ajaxData['type4_price']+'" type="radio"><p>'+ ajaxData['type4'] +'<em class="color-default">'+ ajaxData['type4category'] +'</em> </p><dl class="clear"><dt>'+ ajaxData['type4category'] +':</dt><dd>'+ ajaxData['type4_descript'] +'</dd></dl></label></div>';
+                        if(ajaxData['type5']){
+                            html+='<div class="item-box"><label><input data-price="'+ajaxData['type5_price']+'" type="radio"><p>'+ ajaxData['type5'] +'<em class="color-default">'+ ajaxData['type5category'] +'</em> </p><dl class="clear"><dt>'+ ajaxData['type5category'] +':</dt><dd>'+ ajaxData['type5_descript'] +'</dd></dl></label></div>';
+                        
+                        }
+                    }
+                }    
+            }
+
+            $('#ways').empty().html(html);//更新ways里面的租赁选项
+            $('#istore').text(ajaxData['stock']);//更新库存
+            $('#bhold').text(ajaxData['price']);//更新押金
+            $('#nhold').text(ajaxData['price']);//更新押金
+
+            
+            //更新主页面已选商品的信息
+            var input=$('#ways .item-box label input:checked'),
+                p=input.siblings('p'),
+                dd=input.siblings('.clear').find('dd');
+
+            var content=p.html()+dd.text();
+            $('#curRent .rent-text1').empty().html(content);
+            $('#curRent .rent-text1 em').removeAttr('class');
+            $('#curRent .rent-text2').text('平均月租金：'+ input.data('price') +'元');
+        
+            $('.price .price-number').text(input.data('price'));
+        }
+
+        $('#ways').on('click','.clear',function(){
+            var $this=$(this),
+                input=$this.siblings('input'),
+                p=$this.siblings('p');
+            
+            var price=parseInt(input.data('price'));
+            
+            if(input.is(':checked')){
+                console.log('你已经被选中了！')
+                return;
+            }
+            
+            $('#ways .item-box label input').removeAttr('type checked');
+            input.attr({
+                'type':'radio',
+                'checked':true
+            });
+
+            var html=p.html()+$this.find('dd').text();
+            $('#curRent .rent-text1').empty().html(html);
+            $('#curRent .rent-text1 em').removeAttr('class');
+            $('#curRent .rent-text2').text('平均月租金：'+price+'元');
+        
+            $('.price .price-number').text(price);//更新sku页面价格
+
+            $('.title-info .price-number').text(price);//更新主页面商品价格
+            if($('#service span').hasClass('zzserver')){
+            
+                $('#firstmoney') .text(price+10);//更新主页面合计价格
+            }else{
+
+                $('#firstmoney') .text(price);//更新主页面合计价格
+            }
+        });
+
+        $('#service span').click(function(){
+            var $this=$(this),
+                price=parseInt( $.trim( $('.title-info .price-number').text() ) );
+            var total;
+            if(!$this.hasClass('zzserver')){
+                $this.addClass('zzserver');
+
+                $('#firstmoney') .text(price+10);
+            }else{
+                $this.removeClass('zzserver');
+
+                $('#firstmoney') .text(parseInt( $('#firstmoney').text() )- 10 );
+            }
+        });
+    }
+
 </script>
 @stop

@@ -67,7 +67,7 @@
                 <a href="javascript:void(0);" style="display:none;" class="company_zmxy_link"><i>开通商家/企业芝麻分</i>
                     <div>开通企业信用分，获得更高额度，立享免押金租机。</div>
                 </a>
-                <span style="color:#ea5504;">客服热线：4000-778-768 </span>
+                <span style="color:#8Fc34f;">客服热线：{{config('app.tel')}} </span>
             </div>
             <div class="atz-pr" id="index-login-userinfo"><a class="login" href="/login/" rel="nofollow">登录</a><a
                     class="reg" href="/register/" rel="nofollow">注册</a><span></span><a class="wcQrcodeSwitch"
@@ -80,7 +80,7 @@
         <div class="layout">
             <div class="atz-pl">
                 <div class="atz-brand">
-                    <a href="/"> <img alt="艾特租办公电脑租赁logo图片" src="/images/atz_logo.png"> </a>
+                    <a href="/"> <img  src="/images/atz_logo.png"> </a>
                     <div style="display:none;">
                         <h1>租电脑</h1><span>笔记本租用、办公电脑租赁、笔记本电脑租赁</span>
                     </div>
@@ -120,7 +120,7 @@
         <div class="layout">
             <div class="atz-nav-item" id="comClass">
                 <a href="javascript:void(0);"><span>全部商品分类</span></a>
-                <div class="menu">
+                <div class="menu" >
                     <div class="item">
                         <h3 class="ico_1">
                             <a href="/product">办公电脑</a>

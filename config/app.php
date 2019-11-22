@@ -14,7 +14,9 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
+    'tel'=>env('APP_TEL','000-000-000'),
+    'icp'=>env('APP_ICP','闽XXXX号备案'),
+    'corname'=>env('APP_CORNAME','xxx公司'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

@@ -405,7 +405,11 @@ return [
                 'initialFrameHeight' => 400, // 例如初始化高度
             ],
             // 'field_type' => '自定义名字'
-        ]
+        ],
+        'env-manager' => [
+        // If the value is set to false, this extension will be disabled
+        'enable' => true,
+        ],
     ],
 
 ];

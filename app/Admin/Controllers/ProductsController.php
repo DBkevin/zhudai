@@ -73,7 +73,7 @@ class ProductsController extends  AdminController
             if (!$id = $form->model()->id) {
                 return 'required|image';
             }
-        })->help("请上传图片，多张图片请按【Ctrl】选择")->sortable();
+        })->sortable();
         $form->select('category2_id', '类目')->options(
             Category2::all()->pluck('catename', 'id')
         );
@@ -100,23 +100,18 @@ class ProductsController extends  AdminController
             $form->text('type1', '分期文字1')->help("如：月租金 113.00元 ,租期 24个月")->rules('required');
             $form->currency('type1_price', '首期金额1')->rules('required')->help('113')->symbol('￥');
             $form->text('type1category', '分期类型1')->rules('required')->help('如：固定租期，随租随还');
+            $form->textarea('type1_category_info','分期类型描述')->rules('required')->help('租期的说明');
             $form->text('type1_descript', '分期描述1')->rules('required')->help('如：（平均月租金110.50元/月,1-12期:113.00元/月,13-24期:108.00元/月，到期归还艾特租，6个月后可随时退）');
             $form->text('type2', '分期文字2')->help("如：月租金 113.00元 ,租期 24个月");
             $form->currency('type2_price', '首期金额2')->help('113')->symbol('￥');
             $form->text('type2category', '分期类型2')->help('如：固定租期，随租随还');
+            $form->textarea('type2_category_info','分期类型描述')->help('租期的说明');
             $form->text('type2_descript', '分期描述2')->help('如：（平均月租金110.50元/月,1-12期:113.00元/月,13-24期:108.00元/月，到期归还艾特租，6个月后可随时退）');
             $form->text('type3', '分期文字3')->help("如：月租金 113.00元 ,租期 24个月");
             $form->currency('type3_price', '首期金额3')->help('113')->symbol('￥');
             $form->text('type3category', '分期类型3')->help('如：固定租期，随租随还');
+            $form->textarea('type3_category_info','分期类型描述')->help('租期的说明');
             $form->text('type3_descript', '分期描述3')->help('如：（平均月租金110.50元/月,1-12期:113.00元/月,13-24期:108.00元/月，到期归还艾特租，6个月后可随时退）');
-            $form->text('type4', '分期文字4')->help("如：月租金 113.00元 ,租期 24个月");
-            $form->currency('type4_price', '首期金额4')->help('113')->symbol('￥');
-            $form->text('type4category', '分期类型4')->help('如：固定租期，随租随还');
-            $form->text('type4_descript', '分期描述4')->help('如：（平均月租金110.50元/月,1-12期:113.00元/月,13-24期:108.00元/月，到期归还艾特租，6个月后可随时退）');
-            $form->text('type5', '分期文字5')->help("如：月租金 113.00元 ,租期 24个月");
-            $form->currency('type5_price', '首期金额5')->help('113')->symbol('￥');
-            $form->text('type5category', '分期类型5')->help('如：固定租期，随租随还');
-            $form->text('type5_descript', '分期描述5')->help('如：（平均月租金110.50元/月,1-12期:113.00元/月,13-24期:108.00元/月，到期归还艾特租，6个月后可随时退）');
         });
         /*$form->number('category_id', __('Category id'));
         $form->text('title', __('Title'));

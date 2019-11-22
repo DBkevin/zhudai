@@ -73,7 +73,7 @@
                             <img src="/storage/{{$hot->images[0]}}" alt="{{$hot->title}}" title="{{$hot->title}}">
                             <h3>{{$hot->title}}</h3>
                             <span>
-                                <i>{{$hot->price_num}}</i>元/月
+                                <i>{{$hot->skus[0]->type1_price}}</i>元/月
                             </span>
                             </span>
                         </div>
@@ -145,7 +145,7 @@
                                 </div>
                                 <div class="info">
                                     <p>{{$item->title}}</p>
-                                    <span> <i>{{$item->price_num}}元/月</i> </span>
+                                    <span> <i>{{$item->skus[0]->type1_price}}元/月</i> </span>
                                     <strong>马上租赁</strong>
                                 </div>
                             </a>
@@ -237,4 +237,7 @@
 <script src="{{asset('js/swiper.min.js')}}"></script>
 <script src="{{asset('js/lazyload.min.js')}}"></script>
 <script src="{{asset('js/index.js')}}"></script>
+<script>
+    $('#comClass .menu').show();
+</script>
 @endsection
