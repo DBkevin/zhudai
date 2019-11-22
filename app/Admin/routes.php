@@ -25,6 +25,6 @@ Route::group([
     $router->resource('news', NewsController::class);
     $router->resource('articles', ArticleController::class);
     $router->resource('article-news', ArticleNewController::class);
-
+    $router->resource('hots', HotCaontroller::class);
 
 });
