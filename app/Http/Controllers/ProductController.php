@@ -17,12 +17,46 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         //
-        $categories=Category::query()->where('is_directory',false)->get();
-        $products = Product::query()->where('on_sale', true)->paginate(12);
-        $brand=$products->pluck('brand');
+        $long = $request->get('long');
+        $type = $request->get('type');
+        if ($long) {
+            if ($long=="long") {
+                $categories = Category::query()->where('is_directory', false)->get();
+                $products=Product::where(function($query){
+                    $query->where('on_sale','=',true)
+                        ->where('long','=',true);
+                })->paginate(16);
+            } else if($long=="nolong"){
+                $categories = Category::query()->where('is_directory', false)->get();
+                  $products=Product::where(function($query){
+                    $query->where('on_sale','=',true)
+                        ->where('long','=',false);
+                })->paginate(16);
+            }
+        }else if ($type) {
+            if ($type == 'new') {
+                $categories = Category::query()->where('is_directory', false)->get();
+                 $products=Product::where(function($query){
+                    $query->where('on_sale','=',true)
+                        ->where('type','=',true);
+                })->paginate(16);
+            }
+        } else if($type=="old"){
+            $categories = Category::query()->where('is_directory', false)->get();
+            $products=Product::where(function($query){
+                    $query->where('on_sale','=',true)
+                        ->where('type','=',false);
+            })->paginate(16);
+        }else{
+             $categories = Category::query()->where('is_directory', false)->get();
+            $products=Product::where(function($query){
+                    $query->where('on_sale','=',true);
+            })->paginate(16);
+        }
+        $brand = Product::all()->pluck('brand');
         // 判断是否有提交 search 参数，如果有就赋值给 $search 变量
         // search 参数用来模糊搜索商品
-        return view('products.index',['products'=>$products,'categories'=>$categories,'brand'=>$brand]);
+        return view('products.index', ['products' => $products, 'categories' => $categories, 'brand' => $brand]);
     }
 
     /**
@@ -33,17 +67,17 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',['product'=>$product]);
+        return view('products.show', ['product' => $product]);
     }
 
-    public function showSku(Request $request){
-        $id=$request->route('id');
-        if($id){
-            $sku=ProductSku::query()->where('id',$id)->first();
+    public function showSku(Request $request)
+    {
+        $id = $request->route('id');
+        if ($id) {
+            $sku = ProductSku::query()->where('id', $id)->first();
             return json_encode($sku);
-        }else{
+        } else {
             return false;
         }
-        
     }
 }

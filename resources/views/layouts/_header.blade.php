@@ -185,10 +185,10 @@
             <a href="/product" target="_blank"><span>快速租赁</span></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/product" target="_blank"><span>新机租赁</span></a>
+            <a href="/product?type=new" target="_blank"><span>新机租赁</span></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/product" target="_blank"><span>短期租赁</span> </a>
+            <a href="/product?long=nolong" target="_blank"><span>短期租赁</span> </a>
         </div>
         <div class="atz-nav-item">
             <a href="/recycle" target="_blank"><span>绿色回收</span> </a>
