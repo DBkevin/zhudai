@@ -8,11 +8,12 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     //允许写入字段
-    protected $fillbale=['title','description','attrbuite','brand','type','on_sale','images','price','options','hot'];
+    protected $fillbale=['title','description','attrbuite','brand','type','on_sale','images','price','options','hot','long'];
     protected $casts=[
         'type'=>'boolean',
         'on_sale'=>'boolean',
         'hot'=>'boolean',
+        'long'=>'boolean',
     ];
     /**
      * 一对一关联category表

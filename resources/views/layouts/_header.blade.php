@@ -69,11 +69,11 @@
                 </a>
                 <span style="color:#8Fc34f;">客服热线：{{config('app.tel')}} </span>
             </div>
-            <div class="atz-pr" id="index-login-userinfo"><a class="login" href="/login/" rel="nofollow">登录</a><a
-                    class="reg" href="/register/" rel="nofollow">注册</a><span></span><a class="wcQrcodeSwitch"
+            <div class="atz-pr" id="index-login-userinfo"><a class="login" href="javascript:void(0);" rel="nofollow">登录</a><a
+                    class="reg" href="javascript:void(0);" rel="nofollow">注册</a><span></span><a class="wcQrcodeSwitch"
                     href="javascript:void(0);"><em>微信端</em>
                     <div><img src="/images/wc_qrcode.jpg"></div>
-                </a><em>|</em><a class="service" target="_blank" href="/article/42">服务中心</a> </div>
+                </a><em>|</em><a class="service" target="_blank" href="/article/16">服务中心</a> </div>
         </div>
     </div>
     <div class="atz-hd">
