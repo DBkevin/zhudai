@@ -93,6 +93,8 @@ class ProductsController extends  AdminController
         $form->radio('hot', '首页')->options(['1' => '是', '0' => '否'])->default('1')->help("勾选是会出现首页热销栏目");
         //是否长期
         $form->radio('long','是否长期')->options(['1' => '是', '0' => '否'])->default('1');
+        //快速租贷
+        $form->radio('is_k','快速租贷')->options(['1' => '是', '0' => '否'])->default('0');
         // 直接添加一对多的关联模型
         $form->hasMany('skus', 'SKU 列表', function (Form\NestedForm $form) {
             $form->text('title', 'SKU 名称')->rules('required');

@@ -182,7 +182,7 @@
                 </span><em class="showy">活动</em></a>
         </div>
         <div class="atz-nav-item">
-            <a href="/product" target="_blank"><span>快速租赁</span></a>
+            <a href="/product?is_k=yes" target="_blank"><span>快速租赁</span></a>
         </div>
         <div class="atz-nav-item">
             <a href="/product?type=new" target="_blank"><span>新机租赁</span></a>

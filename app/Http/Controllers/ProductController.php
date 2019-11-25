@@ -17,17 +17,17 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         //
+        $categories = Category::query()->where('is_directory', false)->get();
         $long = $request->get('long');
         $type = $request->get('type');
+        $is_k=$request->get('is_k');
         if ($long) {
             if ($long=="long") {
-                $categories = Category::query()->where('is_directory', false)->get();
                 $products=Product::where(function($query){
                     $query->where('on_sale','=',true)
                         ->where('long','=',true);
                 })->paginate(16);
             } else if($long=="nolong"){
-                $categories = Category::query()->where('is_directory', false)->get();
                   $products=Product::where(function($query){
                     $query->where('on_sale','=',true)
                         ->where('long','=',false);
@@ -35,20 +35,23 @@ class ProductController extends Controller
             }
         }else if ($type) {
             if ($type == 'new') {
-                $categories = Category::query()->where('is_directory', false)->get();
                  $products=Product::where(function($query){
                     $query->where('on_sale','=',true)
                         ->where('type','=',true);
                 })->paginate(16);
             }
         } else if($type=="old"){
-            $categories = Category::query()->where('is_directory', false)->get();
             $products=Product::where(function($query){
                     $query->where('on_sale','=',true)
                         ->where('type','=',false);
             })->paginate(16);
-        }else{
-             $categories = Category::query()->where('is_directory', false)->get();
+        }else if($is_k=="yes"){
+             $products=Product::where(function($query){
+                    $query->where('on_sale','=',true)
+                        ->where('is_k','=',true);
+            })->paginate(16);
+        }
+        else{
             $products=Product::where(function($query){
                     $query->where('on_sale','=',true);
             })->paginate(16);

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>@yield('title', 'Weibo App')-惠趣租</title>
+  <title>@yield('title'){{config('app.name')}}</title>
   <link rel="stylesheet" href="/css/app.css">
   @yield('styles')
   <script src="/js/app.js"></script>
