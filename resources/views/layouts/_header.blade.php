@@ -93,7 +93,7 @@
             </div>
             <div class="atz-pr">
                 <div class="atz-cart-widget">
-                    <a href="/cart/" rel="nofollow">
+                    <a href="javascript:void(0)" rel="nofollow">
                         <span>购物车</span>
                         <em class="cartnum">0</em>
                     </a>
